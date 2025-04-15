@@ -1048,4 +1048,5 @@ input:checked + .slider:before {
     text-align: center;
     margin-bottom: 30px;
     padding-bottom: 20px;
-    border-bottom: 1px solid var(--
+    border-bottom: 1px solid var(--border-light);
+}
