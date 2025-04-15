@@ -350,11 +350,7 @@ p {
     padding-top: 160px;
     padding-bottom: 120px;
     position: relative;
-    background: linear-gradient(
-        135deg,
-        var(--bg-off-white) 0%,
-        rgba(255, 246, 240, 1) 100%
-    );
+    background: transparent !important;
     overflow: hidden;
 }
 
@@ -498,7 +494,7 @@ p {
 /* Trusted By Section */
 .trusted-by {
     padding: 60px 0;
-    background-color: var(--bg-light);
+    background: transparent !important;
     position: relative;
     overflow: hidden;
 }
@@ -551,7 +547,7 @@ p {
 
 /* Features Section */
 .features {
-    background: linear-gradient(to bottom, var(--bg-light), var(--bg-off-white));
+    background: transparent !important;
     padding: 100px 0;
 }
 
@@ -613,7 +609,7 @@ p {
 /* Dashboard Preview Section */
 .dashboard-preview {
     padding: 120px 0;
-    background: linear-gradient(to bottom, var(--bg-off-white), var(--bg-light));
+    background: transparent !important;
 }
 
 .tabs-nav {
@@ -661,7 +657,7 @@ p {
 
 /* How It Works Section */
 .how-it-works {
-    background: linear-gradient(to bottom, var(--bg-light), var(--bg-off-white));
+    background: transparent !important;
     padding: 120px 0;
 }
 
@@ -735,7 +731,7 @@ p {
 
 /* Use Cases Section */
 .use-cases {
-    background: var(--bg-light);
+    background: transparent !important;
     padding: 120px 0 180px;
     position: relative;
     margin-bottom: 0;
