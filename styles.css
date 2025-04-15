@@ -24,6 +24,7 @@
     --gradient-warm: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
     --gradient-accent: linear-gradient(90deg, hsla(24, 100%, 83%, 1) 0%, hsla(341, 91%, 68%, 1) 100%);
     --gradient-section: linear-gradient(to bottom, var(--bg-light), var(--bg-off-white));
+    --gradient-testimonials: linear-gradient(180deg, var(--bg-light) 0%, #FFF6F0 50%, rgba(250, 80, 3, 0.1) 100%);
 }
 
 /* Reset & Base */
@@ -711,8 +712,22 @@ p {
 
 /* Use Cases Section */
 .use-cases {
-    background: linear-gradient(to bottom, var(--bg-off-white), var(--bg-light));
+    background: var(--bg-light);
     padding: 120px 0;
+    position: relative;
+    margin-bottom: -100px;
+    z-index: 2;
+}
+
+.use-cases::after {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background: var(--gradient-testimonials);
+    z-index: -1;
 }
 
 .use-cases-grid {
@@ -783,8 +798,10 @@ p {
 
 /* Testimonials Section */
 .testimonials {
-    background: linear-gradient(135deg, rgba(250, 80, 3, 0.05), rgba(255, 122, 66, 0.1));
+    background: linear-gradient(180deg, transparent 0%, rgba(250, 80, 3, 0.1) 15%, rgba(250, 80, 3, 0.1) 100%);
     padding: 120px 0;
+    position: relative;
+    margin-top: 50px;
 }
 
 .testimonials-slider {
