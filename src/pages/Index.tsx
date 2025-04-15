@@ -1,10 +1,11 @@
+
 import React, { useEffect } from 'react';
 
 const Index = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const overlay = document.querySelector('.page-gradient-overlay');
+      const overlay = document.querySelector('.page-gradient-overlay') as HTMLElement;
       if (overlay) {
         const scrollPercentage = (scrollPosition / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
         overlay.style.backgroundPosition = `0 ${scrollPercentage}%`;
