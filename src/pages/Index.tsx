@@ -8,7 +8,6 @@ const Index = () => {
       const overlay = document.querySelector('.page-gradient-overlay') as HTMLElement;
       if (overlay) {
         const scrollPercentage = Math.min(100, (scrollPosition / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
-        overlay.style.opacity = '1';
         overlay.style.backgroundPosition = `0 ${scrollPercentage}%`;
       }
     };
