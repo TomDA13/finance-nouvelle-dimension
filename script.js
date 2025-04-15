@@ -1,4 +1,3 @@
-
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Navigation menu toggle for mobile
@@ -256,4 +255,34 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    
+    // Animation du dégradé au scroll
+    const handleGradientScroll = () => {
+        const overlay = document.querySelector('.page-gradient-overlay');
+        if (!overlay) return;
+
+        const scrollPosition = window.scrollY;
+        const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercentage = (scrollPosition / documentHeight) * 100;
+
+        // Calcul de la position du dégradé avec une transition plus douce
+        const gradientPosition = Math.min(100, Math.max(0, scrollPercentage));
+        overlay.style.backgroundPosition = `0 ${gradientPosition}%`;
+
+        // Ajustement de l'opacité des sections pour une transition plus fluide
+        const sections = document.querySelectorAll('.landing-page section');
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            const visibilityPercentage = Math.max(0, Math.min(1, 
+                (viewportHeight - Math.max(0, -rect.top) - Math.max(0, rect.bottom - viewportHeight)) / viewportHeight
+            ));
+            
+            section.style.opacity = 0.4 + (visibilityPercentage * 0.6);
+        });
+    };
+
+    window.addEventListener('scroll', handleGradientScroll);
+    // Appel initial pour définir la position initiale
+    handleGradientScroll();
 });
