@@ -25,12 +25,79 @@
                 <li><a href="#pourquoi">Pourquoi Nous</a></li>
                 <li><a href="#temoignages">Témoignages</a></li>
                 <li><a href="#tarifs">Tarifs</a></li>
-                <li><a href="#contact" class="btn-outline">Se connecter</a></li>
-                <li><a href="#demo" class="btn-primary">S'inscrire</a></li>
+                <li><a href="#" id="loginBtn" class="btn-outline">Se connecter</a></li>
+                <li><a href="#" id="signupBtn" class="btn-primary">S'inscrire</a></li>
             </ul>
         </div>
     </nav>
 
+    <!-- Login Form Popup -->
+    <div id="loginFormPopup" class="form-popup-overlay">
+        <div class="form-popup">
+            <div class="form-header">
+                <h2>Connexion</h2>
+                <button class="close-button">&times;</button>
+            </div>
+            <form class="auth-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Votre adresse email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" name="password" placeholder="Votre mot de passe" required>
+                </div>
+                <div class="form-group remember-forgot">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Se souvenir de moi</label>
+                    </div>
+                    <a href="#" class="forgot-password">Mot de passe oublié?</a>
+                </div>
+                <button type="submit" class="form-submit-btn">Se connecter</button>
+            </form>
+            <div class="form-footer">
+                <p>Vous n'avez pas de compte? <a href="#" id="switchToSignup">S'inscrire</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Form Popup -->
+    <div id="signupFormPopup" class="form-popup-overlay">
+        <div class="form-popup">
+            <div class="form-header">
+                <h2>Créer un compte</h2>
+                <button class="close-button">&times;</button>
+            </div>
+            <form class="auth-form">
+                <div class="form-group">
+                    <label for="fullname">Nom complet</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Votre nom complet" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" name="email" placeholder="Votre adresse email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Mot de passe</label>
+                    <input type="password" id="signup-password" name="password" placeholder="Créez un mot de passe" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirmer le mot de passe</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirmez votre mot de passe" required>
+                </div>
+                <div class="form-group terms">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">J'accepte les <a href="#">conditions d'utilisation</a> et la <a href="#">politique de confidentialité</a></label>
+                </div>
+                <button type="submit" class="form-submit-btn">Créer mon compte</button>
+            </form>
+            <div class="form-footer">
+                <p>Vous avez déjà un compte? <a href="#" id="switchToLogin">Se connecter</a></p>
+            </div>
+        </div>
+    </div>
+    
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
