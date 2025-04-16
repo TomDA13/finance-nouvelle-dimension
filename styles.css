@@ -1036,4 +1036,4 @@ input:checked + .slider:before {
   color: white;
   font-size: 0.8rem;
   padding: 5px 10px;
-  border-radius:
+  border-radius: var
