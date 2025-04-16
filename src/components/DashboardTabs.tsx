@@ -40,7 +40,7 @@ const DashboardTabs = () => {
       <div className="tabs-content">
         <div className={`tab-pane ${activeTab === 'tab1' ? 'active' : ''}`} id="tab1">
           <img 
-            src="lovable-uploads/b1bfdc53-bcbf-48c1-b373-56418de2eaf1.png" 
+            src="lovable-uploads/4724d52e-945f-41c5-96dd-91f10ab50ae3.png" 
             alt="Vue d'ensemble du tableau de bord" 
             className="dashboard-preview-image rounded-lg" 
           />
