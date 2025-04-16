@@ -320,6 +320,7 @@ p {
 .nav-auth-buttons {
     display: flex;
     gap: 1rem;
+    margin-left: auto;
 }
 
 .nav-auth-buttons .btn-outline, 
