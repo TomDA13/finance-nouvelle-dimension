@@ -42,7 +42,7 @@ const DashboardTabs = () => {
           <img 
             src="lovable-uploads/4724d52e-945f-41c5-96dd-91f10ab50ae3.png" 
             alt="Vue d'ensemble du tableau de bord" 
-            className="dashboard-preview-image rounded-lg" 
+            className="dashboard-preview-image" 
           />
         </div>
         
@@ -50,7 +50,7 @@ const DashboardTabs = () => {
           <img 
             src="lovable-uploads/2a6a5a86-b14d-4933-a2a9-d0e1d5bcdcb1.png" 
             alt="Liste des projets financiers" 
-            className="dashboard-preview-image rounded-lg" 
+            className="dashboard-preview-image" 
           />
         </div>
         
@@ -58,7 +58,7 @@ const DashboardTabs = () => {
           <img 
             src="lovable-uploads/a0c21298-b6d2-4958-9ab5-06fe3ff334b4.png" 
             alt="Patrimoine Immobilier" 
-            className="dashboard-preview-image rounded-lg" 
+            className="dashboard-preview-image" 
           />
         </div>
         
@@ -66,7 +66,7 @@ const DashboardTabs = () => {
           <img 
             src="lovable-uploads/abd70d81-3502-4bb0-b356-4f5ac235df84.png" 
             alt="Portefeuille d'Actions et ETF" 
-            className="dashboard-preview-image rounded-lg" 
+            className="dashboard-preview-image" 
           />
         </div>
       </div>
