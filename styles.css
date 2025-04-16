@@ -879,46 +879,45 @@ p {
 .testimonial-author {
   display: flex;
   align-items: center;
-}
 
-.author-avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: var(--secondary-gradient);
-  margin-right: 15px;
-}
+  .author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--secondary-gradient);
+    margin-right: 15px;
+  }
 
-.author-info h4 {
-  margin-bottom: 5px;
-}
+  .author-info h4 {
+    margin-bottom: 5px;
+  }
 
-.author-info p {
-  color: var(--text-lightest);
-  font-size: 0.9rem;
-  margin-bottom: 0;
-}
+  .author-info p {
+    color: var(--text-lightest);
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
 
-.testimonial-dots {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-}
+  .testimonial-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
 
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: var(--border-light);
-  margin: 0 5px;
-  cursor: pointer;
-  transition: var(--transition-fast);
-}
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--border-light);
+    margin: 0 5px;
+    cursor: pointer;
+    transition: var(--transition-fast);
+  }
 
-.dot.active {
-  background-color: var(--primary);
-  transform: scale(1.2);
-}
+  .dot.active {
+    background-color: var(--primary);
+    transform: scale(1.2);
+  }
 
 /* Pricing Section */
 .pricing {
@@ -1036,4 +1035,269 @@ input:checked + .slider:before {
   color: white;
   font-size: 0.8rem;
   padding: 5px 10px;
-  border-radius: var
+  border-radius: var(--border-radius-sm);
+}
+
+.pricing-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.pricing-amount {
+  margin: 15px 0;
+}
+
+.price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.price.annual {
+  display: none;
+}
+
+.pricing-header p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.pricing-features {
+  margin-bottom: 30px;
+}
+
+.pricing-features li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.pricing-features i {
+  margin-right: 10px;
+  font-size: 0.9rem;
+}
+
+.pricing-features i.fa-check {
+  color: var(--primary);
+}
+
+.pricing-features i.fa-times {
+  color: var(--text-lightest);
+}
+
+/* FAQ Section */
+.faq {
+  padding: 120px 0;
+  background: linear-gradient(to bottom, var(--bg-off-white), var(--bg-light));
+}
+
+/* CTA Section */
+.cta {
+  background: linear-gradient(to bottom, #FFF8F4 0%, #FFF9F6 100%);
+}
+
+/* Footer */
+.footer {
+  background-color: #FFF9F6;
+}
+
+/* Transition douce entre sections via pseudo-éléments */
+section {
+  position: relative;
+  z-index: 0;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: inherit;
+  filter: blur(40px);
+  opacity: 0.35;
+  z-index: -1;
+  pointer-events: none;
+}
+
+section .section-header {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  h1 {
+      font-size: 3rem;
+  }
+  
+  h2 {
+      font-size: 2.2rem;
+  }
+  
+  .hero-content {
+      max-width: 500px;
+  }
+  
+  .step {
+      flex-direction: column !important;
+      text-align: center;
+      align-items: center;
+  }
+  
+  .step-content {
+      margin-bottom: 30px;
+  }
+  
+  .step-image {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      width: 100%;
+  }
+  
+  .step-number {
+      margin-right: 0 !important;
+      margin-left: 0 !important;
+      margin-bottom: 20px;
+  }
+  
+  .step::after {
+      display: none;
+  }
+}
+
+/* Dégradé subtil et fluide entre sections alternant orange clair et blanc */
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(to bottom, #FFF4EE 0%, #FFE4D6 100%);
+}
+
+/* Trusted By Section */
+.trusted-by {
+  background: linear-gradient(to bottom, #FFE4D6 0%, #FFF3ED 100%);
+}
+
+/* Features Section */
+.features {
+  background: linear-gradient(to bottom, #FFF3ED 0%, #FFF0E8 100%);
+}
+
+/* Dashboard Preview Section */
+.dashboard-preview {
+  background: linear-gradient(to bottom, #FFF0E8 0%, #FFF6F2 100%);
+}
+
+/* How It Works Section */
+.how-it-works {
+  background: linear-gradient(to bottom, #FFF6F2 0%, #FFECDD 100%);
+}
+
+/* Use Cases Section */
+.use-cases {
+  background: linear-gradient(to bottom, #FFECDD 0%, #FFF2EA 100%);
+  position: relative;
+  z-index: 0;
+}
+
+/* Transition douce vers Testimonials */
+.use-cases::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, #FFF2EA 0%, #FFF5F0 100%);
+  z-index: 1;
+  filter: blur(20px);
+  opacity: 0.4;
+}
+
+/* Testimonials Section */
+.testimonials {
+  background: linear-gradient(to bottom, #FFF5F0 0%, #FFE7D9 100%);
+  position: relative;
+  z-index: 0;
+}
+
+/* Transition douce vers Pricing */
+.testimonials::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, #FFE7D9 0%, #FFF1E8 100%);
+  filter: blur(20px);
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.testimonials .section-header {
+  background: transparent;
+  position: relative;
+  z-index: 1;
+  padding: 4rem 0;
+}
+
+.testimonials .section-header::before {
+  content: none;
+}
+
+/* Pricing Section */
+.pricing {
+  background: linear-gradient(to bottom, #FFE7D9 0%, #FFF1E8 100%);
+  position: relative;
+  z-index: 0;
+}
+
+.pricing::before {
+  content: none;
+}
+
+/* FAQ Section */
+.faq {
+  background: linear-gradient(to bottom, #FFF1E8 0%, #FFF8F4 100%);
+}
+
+/* CTA Section */
+.cta {
+  background: linear-gradient(to bottom, #FFF8F4 0%, #FFF9F6 100%);
+}
+
+/* Footer */
+.footer {
+  background-color: #FFF9F6;
+}
+
+/* Transition douce entre sections via pseudo-éléments */
+section {
+  position: relative;
+  z-index: 0;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: inherit;
+  filter: blur(40px);
+  opacity: 0.35;
+  z-index: -1;
+  pointer-events: none;
+}
+
+section .section-header {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
