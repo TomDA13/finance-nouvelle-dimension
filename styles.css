@@ -256,9 +256,14 @@ p {
 }
 
 .logo {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  height: 40px;
+  width: auto;
+  margin-right: 10px;
 }
 
 .logo span {
@@ -1606,5 +1611,3 @@ section .section-header {
   z-index: 1;
   background: transparent;
 }
-
-
