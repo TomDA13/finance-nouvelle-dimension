@@ -1,5 +1,6 @@
 
 import React, { useEffect } from 'react';
+import DashboardTabs from '../components/DashboardTabs';
 
 const Index = () => {
   useEffect(() => {
@@ -86,6 +87,18 @@ const Index = () => {
               <p>Vos données sont protégées par un chiffrement de niveau bancaire</p>
             </div>
           </div>
+        </div>
+      </section>
+      
+      {/* Dashboard Preview Section */}
+      <section className="dashboard-preview">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">Une interface intuitive et puissante</h2>
+            <p className="section-description">Naviguez facilement à travers nos tableaux de bord conçus pour vous donner un contrôle total sur vos finances.</p>
+          </div>
+          
+          <DashboardTabs />
         </div>
       </section>
       

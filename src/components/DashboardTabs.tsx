@@ -1,0 +1,71 @@
+
+import React, { useState } from 'react';
+
+const DashboardTabs = () => {
+  const [activeTab, setActiveTab] = useState('tab1');
+
+  const handleTabClick = (tabId: string) => {
+    setActiveTab(tabId);
+  };
+
+  return (
+    <div className="dashboard-tabs">
+      <div className="tabs-nav">
+        <button 
+          className={`tab-button ${activeTab === 'tab1' ? 'active' : ''}`} 
+          onClick={() => handleTabClick('tab1')}
+        >
+          Vue d'ensemble
+        </button>
+        <button 
+          className={`tab-button ${activeTab === 'tab2' ? 'active' : ''}`} 
+          onClick={() => handleTabClick('tab2')}
+        >
+          Mes projets
+        </button>
+        <button 
+          className={`tab-button ${activeTab === 'tab3' ? 'active' : ''}`} 
+          onClick={() => handleTabClick('tab3')}
+        >
+          Mon immobilier
+        </button>
+        <button 
+          className={`tab-button ${activeTab === 'tab4' ? 'active' : ''}`} 
+          onClick={() => handleTabClick('tab4')}
+        >
+          Mes actions/ETF
+        </button>
+        <button 
+          className={`tab-button ${activeTab === 'tab5' ? 'active' : ''}`} 
+          onClick={() => handleTabClick('tab5')}
+        >
+          Mes outils
+        </button>
+      </div>
+      
+      <div className="tabs-content">
+        <div className={`tab-pane ${activeTab === 'tab1' ? 'active' : ''}`} id="tab1">
+          <img src="lovable-uploads/b1bfdc53-bcbf-48c1-b373-56418de2eaf1.png" alt="Vue d'ensemble du tableau de bord" className="dashboard-preview-image" />
+        </div>
+        
+        <div className={`tab-pane ${activeTab === 'tab2' ? 'active' : ''}`} id="tab2">
+          <img src="lovable-uploads/2a6a5a86-b14d-4933-a2a9-d0e1d5bcdcb1.png" alt="Liste des projets financiers" className="dashboard-preview-image" />
+        </div>
+        
+        <div className={`tab-pane ${activeTab === 'tab3' ? 'active' : ''}`} id="tab3">
+          <img src="lovable-uploads/a0c21298-b6d2-4958-9ab5-06fe3ff334b4.png" alt="Patrimoine Immobilier" className="dashboard-preview-image" />
+        </div>
+        
+        <div className={`tab-pane ${activeTab === 'tab4' ? 'active' : ''}`} id="tab4">
+          <img src="lovable-uploads/abd70d81-3502-4bb0-b356-4f5ac235df84.png" alt="Portefeuille d'Actions et ETF" className="dashboard-preview-image" />
+        </div>
+        
+        <div className={`tab-pane ${activeTab === 'tab5' ? 'active' : ''}`} id="tab5">
+          <img src="lovable-uploads/14e1832a-f86f-4ae3-9d46-bea4944f3dd9.png" alt="Simulateur de crédit" className="dashboard-preview-image credit-simulator" />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default DashboardTabs;

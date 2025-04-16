@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -153,6 +154,75 @@
 .features, .how-it-works {
   background-color: transparent !important;
   position: relative;
+}
+
+/* Dashboard tabs styling */
+.dashboard-tabs {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.tabs-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tab-button {
+  padding: 0.75rem 1.25rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+.tab-button.active {
+  background-color: white;
+  color: #ff5722;
+  border-color: rgba(255, 87, 34, 0.3);
+  box-shadow: 0 2px 8px rgba(255, 87, 34, 0.1);
+}
+
+.tabs-content {
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.tab-pane {
+  display: none;
+  padding: 1rem;
+}
+
+.tab-pane.active {
+  display: block;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dashboard-preview-image {
+  width: 100%;
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease;
 }
 
 .credit-simulator {
