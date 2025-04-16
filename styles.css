@@ -249,6 +249,23 @@ p {
     transition: var(--transition-fast);
 }
 
+.navbar .nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav-auth-buttons {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.nav-auth-buttons li {
+    margin-left: 1rem;
+}
+
 .navbar .container {
     display: flex;
     justify-content: space-between;
