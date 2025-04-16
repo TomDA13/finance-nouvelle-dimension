@@ -1,13 +1,14 @@
 
 .dashboard-preview-image {
-    border-radius: var(--border-radius-md); /* Using the existing border radius variable */
+    border-radius: var(--radius); /* Using the existing border radius variable */
     object-fit: cover;
     width: 100%;
     height: auto;
-    box-shadow: var(--shadow-sm); /* Optional: adds a subtle shadow for depth */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     transition: all 0.3s ease; /* Smooth transition for hover effects */
 }
 
 .dashboard-preview-image:hover {
-    transform: scale(1.02); /* Optional: slight zoom on hover */
+    transform: scale(1.02); /* Slight zoom on hover */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
 }
