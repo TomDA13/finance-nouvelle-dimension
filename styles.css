@@ -1607,3 +1607,11 @@ section .section-header {
     z-index: 1;
     background: transparent;
 }
+
+/* Dashboard Image */
+.dashboard-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+}
