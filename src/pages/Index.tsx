@@ -24,29 +24,6 @@ const Index = () => {
     <div className="landing-page">
       <div className="page-gradient-overlay" />
       
-      {/* Navigation */}
-      <nav className="navbar">
-        <div className="container">
-          <div className="navbar-content">
-            <div className="logo-container">
-              <span className="logo">FinDash</span>
-            </div>
-            
-            <div className="nav-links">
-              <a href="#features" className="nav-link">Fonctionnalités</a>
-              <a href="#how-it-works" className="nav-link">Comment ça marche</a>
-              <a href="#pricing" className="nav-link">Tarifs</a>
-              <a href="#faq" className="nav-link">FAQ</a>
-            </div>
-            
-            <div className="nav-auth">
-              <a href="/login" className="btn-outline">Se connecter</a>
-              <a href="/signup" className="btn-primary">S'inscrire</a>
-            </div>
-          </div>
-        </div>
-      </nav>
-      
       {/* Hero Section */}
       <section className="hero">
         <div className="container">
