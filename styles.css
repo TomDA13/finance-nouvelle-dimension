@@ -1558,7 +1558,7 @@ input:checked + .slider:before {
 
 /* Pricing Section */
 .pricing {
-    background: linear-gradient(to bottom, #FFE7D9 0%, #FFF1E8 100%);
+    background: linear-gradient(to bottom, #FFF1E8 0%, #FFF8F4 100%);
     position: relative;
     z-index: 0;
 }
@@ -1569,12 +1569,12 @@ input:checked + .slider:before {
 
 /* FAQ Section */
 .faq {
-    background: linear-gradient(to bottom, #FFF1E8 0%, #FFF8F4 100%);
+    background: linear-gradient(to bottom, #FFF8F4 0%, #FFF9F6 100%);
 }
 
 /* CTA Section */
 .cta {
-    background: linear-gradient(to bottom, #FFF8F4 0%, #FFF9F6 100%);
+    background: linear-gradient(to bottom, #FFF9F6 0%, #FFF9F6 100%);
 }
 
 /* Footer */
@@ -1650,4 +1650,20 @@ section .section-header {
 .tools-preview img:hover {
     box-shadow: var(--shadow-md);
     transform: translateY(-5px);
+}
+
+.dashboard-preview-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-fast);
+    margin: 0 auto;
+    display: block;
+}
+
+.dashboard-preview-image:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
 }
