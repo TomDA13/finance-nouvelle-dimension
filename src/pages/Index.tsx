@@ -61,8 +61,8 @@ const Index = () => {
             <li><a href="#temoignages">Témoignages</a></li>
             <li><a href="#tarifs">Tarifs</a></li>
             <div className="nav-auth-buttons">
-              <li><a href="#" className="btn-outline" onClick={openLoginForm}>Se connecter</a></li>
-              <li><a href="#" className="btn-primary" onClick={openSignupForm}>S'inscrire</a></li>
+              <li><a href="#" onClick={openLoginForm}>Se connecter</a></li>
+              <li><a href="#" onClick={openSignupForm}>S'inscrire</a></li>
             </div>
           </ul>
         </div>
