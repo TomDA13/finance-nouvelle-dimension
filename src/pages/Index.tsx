@@ -23,20 +23,48 @@ const Index = () => {
     <div className="landing-page">
       <div className="page-gradient-overlay" />
       
-      {/* Hero Section */}
+      {/* Hero Section - Redesigned for better layout */}
       <section className="hero">
-        <div className="container">
-          <div className="hero-content">
-            <h1>Donnez une nouvelle dimension à votre argent</h1>
-            <p>Gérez votre patrimoine, agrégez vos comptes, et recevez des conseils financiers personnalisés, tout en un seul endroit.</p>
-            <div className="hero-cta">
+        <div className="container mx-auto px-4">
+          <div className="hero-content text-center max-w-4xl mx-auto pt-28">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              Donnez une nouvelle dimension à votre argent
+            </h1>
+            <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+              Gérez votre patrimoine, agrégez vos comptes, et recevez des conseils financiers personnalisés, tout en un seul endroit.
+            </p>
+            
+            <div className="hero-image mb-12">
+              <img 
+                src="lovable-uploads/7c109932-9a59-4d89-8b8c-ce48414a9ea6.png" 
+                alt="Tableau de bord Finsya" 
+                className="dashboard-image mx-auto"
+              />
+            </div>
+            
+            <div className="hero-cta flex flex-col sm:flex-row justify-center gap-4 mb-16 mx-auto">
               <a href="#features" className="btn-primary">Commencer Gratuitement</a>
-              <a href="#how-it-works" className="btn-outline">Voir la démo</a>
+              <a href="#demo-video" className="btn-video">
+                <span className="play-icon"><i className="fas fa-play"></i></span>
+                <span>Voir la démo</span>
+              </a>
             </div>
           </div>
-          <div className="hero-image">
-            <div className="dashboard-placeholder">
-              <p className="placeholder-text">Ici, une capture du tableau de bord principal avec vue d'ensemble du patrimoine</p>
+          
+          <div className="hero-stats mb-12">
+            <div className="stats-grid">
+              <div className="stat-item">
+                <span className="stat-number">30K+</span>
+                <span className="stat-text">Utilisateurs actifs</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">€2B+</span>
+                <span className="stat-text">Actifs suivis</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">95%</span>
+                <span className="stat-text">Satisfaction client</span>
+              </div>
             </div>
           </div>
         </div>
