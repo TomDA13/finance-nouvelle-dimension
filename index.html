@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finance Nouvelle Dimension</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -13,7 +13,7 @@
     <nav class="navbar">
         <div class="container">
             <div class="logo-container">
-                <img src="lovable-uploads/4b14f6ca-724c-4bf2-93be-a4a59647e04b.png" alt="Finsya Logo" class="logo-img">
+                <img src="../assets/logo.svg" alt="Finsya Logo" class="logo-img">
             </div>
             <div class="menu-toggle">
                 <span></span>
@@ -36,7 +36,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Donnez une nouvelle dimension à votre argent</h1>
-                <p>Gérez votre patrimoine, agrégez vos comptes, et recevez des conseils financiers personnalisés, tout en un seul endroit.</p>
+                <p>Gérez votre argent, concrétisez vos projets et recevez des stratégies personnalisées, le tout en un seul endroit. Vous passez des milliers d'heures à travailler pour gagner votre argent, vous méritez le meilleur outil pour le préserver, le comprendre et le faire fructifier.</p>
                 <div class="hero-cta">
                     <a href="#demo" class="btn-primary">Commencer Gratuitement</a>
                     <a href="#demo-video" class="btn-video">
@@ -44,41 +44,29 @@
                         <span>Voir la démo</span>
                     </a>
                 </div>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">30K+</span>
-                        <span class="stat-text">Utilisateurs actifs</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">€2B+</span>
-                        <span class="stat-text">Actifs suivis</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">95%</span>
-                        <span class="stat-text">Satisfaction client</span>
-                    </div>
-                </div>
             </div>
             <div class="hero-image">
-                <img src="lovable-uploads/7c109932-9a59-4d89-8b8c-ce48414a9ea6.png" alt="Tableau de bord Finsya" class="dashboard-image">
+                <img src="../assets/dashboard.png" alt="Tableau de bord Finsya" class="dashboard-image">
             </div>
+            <div class="hero-stats">
+              <div class="stat-item">
+                  <span class="stat-number">30K+</span>
+                  <span class="stat-text">Utilisateurs actifs</span>
+              </div>
+              <div class="stat-item">
+                  <span class="stat-number">€2B+</span>
+                  <span class="stat-text">Actifs suivis</span>
+              </div>
+              <div class="stat-item">
+                  <span class="stat-number">95%</span>
+                  <span class="stat-text">Satisfaction client</span>
+              </div>
+          </div>
         </div>
         <div class="hero-wave"></div>
     </section>
 
-    <!-- Trusted By Section -->
-    <section class="trusted-by">
-        <div class="container">
-            <h2 class="section-subtitle">Ils nous font confiance</h2>
-            <div class="logos-container">
-                <div class="logo-item">BNP Paribas</div>
-                <div class="logo-item">Société Générale</div>
-                <div class="logo-item">Crédit Agricole</div>
-                <div class="logo-item">AXA</div>
-                <div class="logo-item">Boursorama</div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Features Section -->
     <section id="fonctionnalites" class="features">
@@ -159,23 +147,33 @@
                 
                 <div class="tabs-content">
                     <div class="tab-pane active" id="tab1">
-                        <img src="lovable-uploads/b1bfdc53-bcbf-48c1-b373-56418de2eaf1.png" alt="Vue d'ensemble du tableau de bord" class="dashboard-preview-image" />
+                      <div class="dashboard-placeholder">
+                        <img src="../assets/dashboardonly.png" alt="Vue d'ensemble du tableau de bord"  />
+                      </div>
                     </div>
                     
                     <div class="tab-pane" id="tab2">
-                        <img src="lovable-uploads/2a6a5a86-b14d-4933-a2a9-d0e1d5bcdcb1.png" alt="Liste des projets financiers" class="dashboard-preview-image" />
+                      <div class="dashboard-placeholder">
+                        <img src="../assets/projets.png" alt="Liste des projets financiers" />
+                      </div>
                     </div>
                     
                     <div class="tab-pane" id="tab3">
-                        <img src="lovable-uploads/a0c21298-b6d2-4958-9ab5-06fe3ff334b4.png" alt="Patrimoine Immobilier" class="dashboard-preview-image" />
+                      <div class="dashboard-placeholder">
+                        <img src="../assets/immo.png" alt="Patrimoine Immobilier"  />
+                      </div>
                     </div>
                     
                     <div class="tab-pane" id="tab4">
-                        <img src="lovable-uploads/abd70d81-3502-4bb0-b356-4f5ac235df84.png" alt="Portefeuille d'Actions et ETF" class="dashboard-preview-image" />
+                      <div class="dashboard-placeholder">
+                        <img src="../assets/actions.png" alt="Portefeuille d'Actions et ETF" />
+                      </div>
                     </div>
                     
                     <div class="tab-pane" id="tab5">
-                        <img src="lovable-uploads/14e1832a-f86f-4ae3-9d46-bea4944f3dd9.png" alt="Simulateur de crédit" class="dashboard-preview-image credit-simulator" />
+                      <div class="dashboard-placeholder">
+                        <img src="../assets/crédit.png" alt="Simulateur de crédit"  />
+                      </div>
                     </div>
                 </div>
             </div>
@@ -199,7 +197,9 @@
                     </div>
                     <div class="step-image">
                         <div class="dashboard-placeholder">
-                            <div class="placeholder-text">Ici, une image de la page de connexion des comptes</div>
+                          
+                            <img src="../assets/connectioncompte.png" alt="Connection des comptes" class="dashboard-preview-image credit-simulator" />
+                       
                         </div>
                     </div>
                 </div>
@@ -211,9 +211,11 @@
                         <p>Explorez nos tableaux de bord interactifs pour visualiser votre patrimoine et identifier des opportunités d'optimisation.</p>
                     </div>
                     <div class="step-image">
-                        <div class="dashboard-placeholder">
-                            <div class="placeholder-text">Ici, une image des graphiques d'analyse financière</div>
-                        </div>
+                      <div class="dashboard-placeholder">
+                        
+                          <img src="../assets/analyse.png" alt="Analyse de la situation financière" class="dashboard-preview-image credit-simulator" />
+                     
+                      </div>
                     </div>
                 </div>
                 
@@ -223,10 +225,11 @@
                         <h3>Recevez des conseils personnalisés</h3>
                         <p>Obtenez des recommandations sur mesure pour améliorer votre santé financière et atteindre vos objectifs.</p>
                     </div>
-                    <div class="step-image">
-                        <div class="dashboard-placeholder">
-                            <div class="placeholder-text">Ici, une image de l'interface de conseils personnalisés</div>
-                        </div>
+                    <div class="dashboard-placeholder">
+                        
+                      <img src="../assets/matelassécurité.png" alt="Matelassé de sécurité" class="dashboard-preview-image credit-simulator" />
+                 
+                  </div>
                     </div>
                 </div>
             </div>
