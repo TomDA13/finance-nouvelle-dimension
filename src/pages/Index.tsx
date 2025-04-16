@@ -1,11 +1,8 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import DashboardTabs from '../components/DashboardTabs';
 
 const Index = () => {
-  const [showLoginForm, setShowLoginForm] = useState(false);
-  const [showSignupForm, setShowSignupForm] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -23,121 +20,9 @@ const Index = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const openLoginForm = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setShowLoginForm(true);
-    setShowSignupForm(false);
-  };
-
-  const openSignupForm = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setShowSignupForm(true);
-    setShowLoginForm(false);
-  };
-
-  const closeAllForms = () => {
-    setShowLoginForm(false);
-    setShowSignupForm(false);
-  };
-
   return (
     <div className="landing-page">
       <div className="page-gradient-overlay" />
-      
-      {/* Navigation */}
-      <nav className="navbar">
-        <div className="container">
-          <div className="logo-container">
-            <img src="../assets/logo.svg" alt="Finsya Logo" className="logo-img" />
-          </div>
-          <div className="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <ul className="nav-menu">
-            <li><a href="#fonctionnalites">Fonctionnalités</a></li>
-            <li><a href="#pourquoi">Pourquoi Nous</a></li>
-            <li><a href="#temoignages">Témoignages</a></li>
-            <li><a href="#tarifs">Tarifs</a></li>
-            <div className="nav-auth-buttons">
-              <li><a href="#" onClick={openLoginForm}>Se connecter</a></li>
-              <li><a href="#" onClick={openSignupForm}>S'inscrire</a></li>
-            </div>
-          </ul>
-        </div>
-      </nav>
-      
-      {/* Login Form Popup */}
-      {showLoginForm && (
-        <div className="form-popup-overlay">
-          <div className="form-popup">
-            <div className="form-header">
-              <h2>Connexion</h2>
-              <button className="close-button" onClick={closeAllForms}>&times;</button>
-            </div>
-            <form className="auth-form">
-              <div className="form-group">
-                <label htmlFor="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Votre adresse email" required />
-              </div>
-              <div className="form-group">
-                <label htmlFor="password">Mot de passe</label>
-                <input type="password" id="password" name="password" placeholder="Votre mot de passe" required />
-              </div>
-              <div className="form-group remember-forgot">
-                <div className="remember-me">
-                  <input type="checkbox" id="remember" name="remember" />
-                  <label htmlFor="remember">Se souvenir de moi</label>
-                </div>
-                <a href="#" className="forgot-password">Mot de passe oublié?</a>
-              </div>
-              <button type="submit" className="form-submit-btn">Se connecter</button>
-            </form>
-            <div className="form-footer">
-              <p>Vous n'avez pas de compte? <a href="#" onClick={(e) => {e.preventDefault(); setShowLoginForm(false); setShowSignupForm(true);}}>S'inscrire</a></p>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Signup Form Popup */}
-      {showSignupForm && (
-        <div className="form-popup-overlay">
-          <div className="form-popup">
-            <div className="form-header">
-              <h2>Créer un compte</h2>
-              <button className="close-button" onClick={closeAllForms}>&times;</button>
-            </div>
-            <form className="auth-form">
-              <div className="form-group">
-                <label htmlFor="fullname">Nom complet</label>
-                <input type="text" id="fullname" name="fullname" placeholder="Votre nom complet" required />
-              </div>
-              <div className="form-group">
-                <label htmlFor="signup-email">Email</label>
-                <input type="email" id="signup-email" name="email" placeholder="Votre adresse email" required />
-              </div>
-              <div className="form-group">
-                <label htmlFor="signup-password">Mot de passe</label>
-                <input type="password" id="signup-password" name="password" placeholder="Créez un mot de passe" required />
-              </div>
-              <div className="form-group">
-                <label htmlFor="confirm-password">Confirmer le mot de passe</label>
-                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirmez votre mot de passe" required />
-              </div>
-              <div className="form-group terms">
-                <input type="checkbox" id="terms" name="terms" required />
-                <label htmlFor="terms">J'accepte les <a href="#">conditions d'utilisation</a> et la <a href="#">politique de confidentialité</a></label>
-              </div>
-              <button type="submit" className="form-submit-btn">Créer mon compte</button>
-            </form>
-            <div className="form-footer">
-              <p>Vous avez déjà un compte? <a href="#" onClick={(e) => {e.preventDefault(); setShowSignupForm(false); setShowLoginForm(true);}}>Se connecter</a></p>
-            </div>
-          </div>
-        </div>
-      )}
       
       {/* Hero Section */}
       <section className="hero">
