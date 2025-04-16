@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -156,3 +155,7 @@
   position: relative;
 }
 
+.tools-preview img {
+  @apply w-full object-cover;
+  max-width: 300px;
+}

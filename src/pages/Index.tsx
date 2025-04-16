@@ -1,5 +1,6 @@
-
 import React, { useEffect } from 'react';
+import { Button } from "@/components/ui/button";
+import { Calculator } from "lucide-react";
 
 const Index = () => {
   useEffect(() => {
@@ -13,7 +14,6 @@ const Index = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    // Trigger once on initial load
     handleScroll();
     
     return () => window.removeEventListener('scroll', handleScroll);
@@ -32,6 +32,21 @@ const Index = () => {
             <div className="hero-cta">
               <a href="#features" className="btn-primary">Commencer Gratuitement</a>
               <a href="#how-it-works" className="btn-outline">Voir la démo</a>
+              <Button 
+                variant="secondary" 
+                className="flex items-center gap-2 hover:bg-gray-100"
+                onClick={() => window.location.href = '/tools'}
+              >
+                <Calculator className="h-5 w-5" />
+                Mes outils
+              </Button>
+              <div className="tools-preview mt-4">
+                <img 
+                  src="/lovable-uploads/73d7feab-7fa5-4995-80b7-db7b09aa57ad.png" 
+                  alt="Simulateur de crédit" 
+                  className="rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 max-w-[300px]"
+                />
+              </div>
             </div>
           </div>
           <div className="hero-image">
