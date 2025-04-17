@@ -45,3 +45,17 @@
   display: flex;
   align-items: center;
 }
+
+/* Assurer que les liens actifs sont visibles */
+.nav-menu li a.active,
+.dropdown-menu a.active {
+  color: #4a6cf7;
+  font-weight: 600;
+}
+
+/* Améliorer l'apparence des menus déroulants */
+.dropdown-menu {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
