@@ -1,14 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finsya - Gérez votre argent</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Finance Nouvelle Dimension</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <nav>
+    <!-- Navigation -->
+    <nav class="navbar">
         <div class="container">
             <div class="logo-container">
                 <img src="../assets/logo.svg" alt="Finsya Logo" class="logo-img">
@@ -20,8 +23,8 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">Ressources <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-menu">
-                        <a href="#guide">Guide gratuit</a>
-                        <a href="#blog">Blog</a>
+                        <a href="https://www.finsya.com/guide">Guide gratuit</a>
+                        <a href="https://www.finsya.com/blog">Blog</a>
                         <a href="https://discord.gg/d3Js2PhsT8">Communauté</a>
                     </div>
                 </li>
@@ -31,17 +34,17 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">À propos <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-menu">
-                        <a href="#notre-histoire">Notre histoire</a>
-                        <a href="#securite">Sécurité</a>
-                        <a href="#roadmap">Roadmap</a>
+                        <a href="#">Notre histoire</a>
+                        <a href="#">Sécurité</a>
+                        <a href="#">Roadmap</a>
                         <a href="#">Contact</a>
                     </div>
                 </li>
             </ul>
             
             <div class="nav-auth-buttons">
-                <a href="#" id="loginBtn" class="btn-outline">Se connecter</a>
-                <a href="#" id="signupBtn" class="btn-primary">S'inscrire</a>
+                <li class="auth-item"><a href="#" id="loginBtn" class="btn-outline">Se connecter</a></li>
+                <li class="auth-item"><a href="#" id="signupBtn" class="btn-primary">S'inscrire</a></li>
             </div>
             
             <div class="menu-toggle">
@@ -51,21 +54,660 @@
             </div>
         </div>
     </nav>
+
+    <!-- Login Form Popup -->
+    <div id="loginFormPopup" class="form-popup-overlay">
+        <div class="form-popup">
+            <div class="form-header">
+                <h2>Connexion</h2>
+                <button class="close-button">&times;</button>
+            </div>
+            <form class="auth-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Votre adresse email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" name="password" placeholder="Votre mot de passe" required>
+                </div>
+                <div class="form-group remember-forgot">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Se souvenir de moi</label>
+                    </div>
+                    <a href="#" class="forgot-password">Mot de passe oublié?</a>
+                </div>
+                <button type="submit" class="form-submit-btn">Se connecter</button>
+            </form>
+            <div class="form-footer">
+                <p>Vous n'avez pas de compte? <a href="#" id="switchToSignup">S'inscrire</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Form Popup -->
+    <div id="signupFormPopup" class="form-popup-overlay">
+        <div class="form-popup">
+            <div class="form-header">
+                <h2>Créer un compte</h2>
+                <button class="close-button">&times;</button>
+            </div>
+            <form class="auth-form">
+                <div class="form-group">
+                    <label for="fullname">Nom complet</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Votre nom complet" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" name="email" placeholder="Votre adresse email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Mot de passe</label>
+                    <input type="password" id="signup-password" name="password" placeholder="Créez un mot de passe" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirmer le mot de passe</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirmez votre mot de passe" required>
+                </div>
+                <div class="form-group terms">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">J'accepte les <a href="#">conditions d'utilisation</a> et la <a href="#">politique de confidentialité</a></label>
+                </div>
+                <button type="submit" class="form-submit-btn">Créer mon compte</button>
+            </form>
+            <div class="form-footer">
+                <p>Vous avez déjà un compte? <a href="#" id="switchToLogin">Se connecter</a></p>
+            </div>
+        </div>
+    </div>
     
-    <header class="hero">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
             <div class="hero-content">
                 <h1>Donnez une nouvelle dimension à votre argent</h1>
-                <p>Gérez votre patrimoine, agrégez vos comptes, et recevez des conseils financiers personnalisés, tout en un seul endroit.</p>
-                <div class="hero-buttons">
-                    <a href="#" class="btn-primary">Commencer Gratuitement</a>
-                    <a href="#" class="btn-outline">Voir la démo</a>
+                <p>Gérez votre argent, concrétisez vos projets et recevez des stratégies personnalisées, le tout en un seul endroit. Vous passez des milliers d'heures à travailler pour gagner votre argent, vous méritez le meilleur outil pour le préserver, le comprendre et le faire fructifier.</p>
+                <div class="hero-cta">
+                    <a href="#" class="btn-primary" id="hero-signup-button">Commencer Gratuitement</a>
+                    <a href="#demo-video" class="btn-video">
+                        <span class="play-icon"><i class="fas fa-play"></i></span>
+                        <span>Voir la démo</span>
+                    </a>
                 </div>
             </div>
             <div class="hero-image">
-                <img src="../assets/dashboard-preview.png" alt="Tableau de bord Finsya">
+                <img src="../assets/dashboard.png" alt="Tableau de bord Finsya" class="dashboard-image">
+            </div>
+            <div class="hero-stats">
+              <div class="stat-item">
+                  <span class="stat-number">30K+</span>
+                  <span class="stat-text">Utilisateurs actifs</span>
+              </div>
+              <div class="stat-item">
+                  <span class="stat-number">€2B+</span>
+                  <span class="stat-text">Actifs suivis</span>
+              </div>
+              <div class="stat-item">
+                  <span class="stat-number">95%</span>
+                  <span class="stat-text">Satisfaction client</span>
+              </div>
+          </div>
+        </div>
+        <div class="hero-wave"></div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="fonctionnalites" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Une plateforme complète pour votre gestion patrimoniale</h2>
+                <p class="section-description">Découvrez comment Finance Nouvelle Dimension révolutionne la façon dont vous gérez votre patrimoine financier.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Agrégation de Comptes</h3>
+                    <p>Synchronisez tous vos comptes bancaires, investissements, et propriétés en un seul endroit pour une vision globale.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h3>Suivi de Patrimoine</h3>
+                    <p>Visualisez l'évolution de votre patrimoine net et suivez vos progrès vers vos objectifs financiers.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Conseils Personnalisés</h3>
+                    <p>Recevez des recommandations sur mesure basées sur votre profil, vos objectifs et votre tolérance au risque.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Sécurité Avancée</h3>
+                    <p>Protégez vos données avec un chiffrement de niveau bancaire et une authentification à deux facteurs.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Intelligence Artificielle</h3>
+                    <p>Optimisez vos finances grâce à notre IA qui analyse vos habitudes et suggère des opportunités d'économies.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <h3>Rapports Détaillés</h3>
+                    <p>Accédez à des analyses approfondies et des rapports personnalisables sur tous vos actifs financiers.</p>
+                </div>
             </div>
         </div>
-    </header>
+    </section>
+
+    <!-- Dashboard Preview Section -->
+    <section class="dashboard-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Une interface intuitive et puissante</h2>
+                <p class="section-description">Naviguez facilement à travers nos tableaux de bord conçus pour vous donner un contrôle total sur vos finances.</p>
+            </div>
+            
+            <div class="dashboard-tabs">
+                <div class="tabs-nav">
+                    <button class="tab-button active" data-tab="tab1">Vue d'ensemble</button>
+                    <button class="tab-button" data-tab="tab2">Mes projets</button>
+                    <button class="tab-button" data-tab="tab3">Mon immobilier</button>
+                    <button class="tab-button" data-tab="tab4">Mes actions/ETF</button>
+                    <button class="tab-button" data-tab="tab5">Mes outils</button>
+                </div>
+                
+                <div class="tabs-content">
+                    <div class="tab-pane active" id="tab1">
+                      <div class="dashboard-placeholder">
+                        <img src="../assets/dashboardonly.png" alt="Vue d'ensemble du tableau de bord"  />
+                      </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="tab2">
+                      <div class="dashboard-placeholder">
+                        <img src="../assets/projets.png" alt="Liste des projets financiers" />
+                      </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="tab3">
+                      <div class="dashboard-placeholder">
+                        <img src="../assets/immo.png" alt="Patrimoine Immobilier"  />
+                      </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="tab4">
+                      <div class="dashboard-placeholder">
+                        <img src="../assets/actions.png" alt="Portefeuille d'Actions et ETF" />
+                      </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="tab5">
+                      <div class="dashboard-placeholder">
+                        <img src="../assets/crédit.png" alt="Simulateur de crédit"  />
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="pourquoi" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Comment ça fonctionne</h2>
+                <p class="section-description">Notre approche en 3 étapes simples pour optimiser votre gestion patrimoniale</p>
+            </div>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Connectez vos comptes</h3>
+                        <p>Ajoutez facilement tous vos comptes bancaires, investissements, crédits et biens immobiliers pour une vision complète.</p>
+                    </div>
+                    <div class="step-image">
+                        <div class="dashboard-placeholder">
+                          
+                            <img src="../assets/connectioncompte.png" alt="Connection des comptes" class="dashboard-preview-image credit-simulator" />
+                       
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Analysez votre situation financière</h3>
+                        <p>Explorez nos tableaux de bord interactifs pour visualiser votre patrimoine et identifier des opportunités d'optimisation.</p>
+                    </div>
+                    <div class="step-image">
+                      <div class="dashboard-placeholder">
+                        
+                          <img src="../assets/analyse.png" alt="Analyse de la situation financière" class="dashboard-preview-image credit-simulator" />
+                     
+                      </div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Recevez des conseils personnalisés</h3>
+                        <p>Obtenez des recommandations sur mesure pour améliorer votre santé financière et atteindre vos objectifs.</p>
+                    </div>
+                    <div class="dashboard-placeholder">
+                        
+                      <img src="../assets/matelassécurité.png" alt="Matelassé de sécurité" class="dashboard-preview-image credit-simulator" />
+                 
+                  </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="use-cases">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Solutions adaptées à vos besoins</h2>
+                <p class="section-description">Que vous soyez investisseur débutant ou expert, notre plateforme s'adapte à tous les profils</p>
+            </div>
+            
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Pour les Particuliers</h3>
+                    <ul>
+                        <li>Agrégation de tous vos comptes personnels</li>
+                        <li>Suivi de budget et dépenses</li>
+                        <li>Planification de la retraite</li>
+                        <li>Conseils d'épargne personnalisés</li>
+                    </ul>
+                </div>
+                
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Pour les Professionnels</h3>
+                    <ul>
+                        <li>Séparation des finances personnelles et professionnelles</li>
+                        <li>Optimisation fiscale pour entrepreneurs</li>
+                        <li>Gestion de trésorerie avancée</li>
+                        <li>Prévisions financières pour votre activité</li>
+                    </ul>
+                </div>
+                
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Pour les Familles</h3>
+                    <ul>
+                        <li>Gestion patrimoniale familiale</li>
+                        <li>Planification successorale</li>
+                        <li>Épargne pour études des enfants</li>
+                        <li>Protection financière du foyer</li>
+                    </ul>
+                </div>
+                
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Pour les Investisseurs</h3>
+                    <ul>
+                        <li>Suivi de portefeuille multi-actifs</li>
+                        <li>Analyse de performance détaillée</li>
+                        <li>Alertes sur opportunités d'investissement</li>
+                        <li>Optimisation de l'allocation d'actifs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="temoignages" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ce que disent nos utilisateurs</h2>
+                <p class="section-description">Rejoignez des milliers de clients satisfaits qui transforment leur gestion financière</p>
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-card active">
+                    <div class="testimonial-content">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Grâce à Finance Nouvelle Dimension, j'ai enfin une vision claire de mes finances. L'agrégation de mes comptes m'a permis d'identifier des frais inutiles et d'économiser plus de 200€ par mois !"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"></div>
+                            <div class="author-info">
+                                <h4>Sophie Dupont</h4>
+                                <p>Utilisatrice depuis 2 ans</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"En tant qu'entrepreneur, cette plateforme m'a aidé à séparer clairement mes finances personnelles et professionnelles. Les conseils personnalisés ont transformé ma façon de gérer mon patrimoine."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"></div>
+                            <div class="author-info">
+                                <h4>Thomas Martin</h4>
+                                <p>Entrepreneur, client depuis 18 mois</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p>"L'interface est incroyablement intuitive. J'apprécie particulièrement les rapports mensuels sur l'évolution de mon patrimoine et les suggestions d'optimisation fiscale qui sont toujours pertinentes."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"></div>
+                            <div class="author-info">
+                                <h4>Marie Lefebvre</h4>
+                                <p>Utilisatrice depuis 3 ans</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="tarifs" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Des formules adaptées à vos besoins</h2>
+                <p class="section-description">Choisissez l'offre qui correspond le mieux à votre situation financière</p>
+            </div>
+            
+            <div class="pricing-toggle">
+                <span>Mensuel</span>
+                <label class="switch">
+                    <input type="checkbox" id="pricingToggle">
+                    <span class="slider round"></span>
+                </label>
+                <span>Annuel <span class="save-badge">Économisez 20%</span></span>
+            </div>
+            
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Essentiel</h3>
+                        <div class="pricing-amount">
+                            <span class="price monthly">9,99€</span>
+                            <span class="price annual">7,99€</span>
+                            <span>/mois</span>
+                        </div>
+                        <p>Parfait pour débuter votre gestion financière</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Jusqu'à 5 comptes connectés</li>
+                        <li><i class="fas fa-check"></i> Tableau de bord personnalisé</li>
+                        <li><i class="fas fa-check"></i> Suivi budgétaire</li>
+                        <li><i class="fas fa-check"></i> Conseils financiers basiques</li>
+                        <li><i class="fas fa-times"></i> Alertes personnalisées</li>
+                        <li><i class="fas fa-times"></i> Rapports avancés</li>
+                        <li><i class="fas fa-times"></i> Support prioritaire</li>
+                    </ul>
+                    <a href="#demo" class="btn-pricing">Essayer 30 jours</a>
+                </div>
+                
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Le plus choisi</div>
+                    <div class="pricing-header">
+                        <h3>Premium</h3>
+                        <div class="pricing-amount">
+                            <span class="price monthly">19,99€</span>
+                            <span class="price annual">15,99€</span>
+                            <span>/mois</span>
+                        </div>
+                        <p>Pour une gestion complète de votre patrimoine</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Jusqu'à 20 comptes connectés</li>
+                        <li><i class="fas fa-check"></i> Tableau de bord personnalisé</li>
+                        <li><i class="fas fa-check"></i> Suivi budgétaire avancé</li>
+                        <li><i class="fas fa-check"></i> Conseils financiers personnalisés</li>
+                        <li><i class="fas fa-check"></i> Alertes personnalisées</li>
+                        <li><i class="fas fa-check"></i> Rapports avancés</li>
+                        <li><i class="fas fa-times"></i> Support prioritaire</li>
+                    </ul>
+                    <a href="#demo" class="btn-pricing">Essayer 30 jours</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Entreprise</h3>
+                        <div class="pricing-amount">
+                            <span class="price monthly">39,99€</span>
+                            <span class="price annual">31,99€</span>
+                            <span>/mois</span>
+                        </div>
+                        <p>Solution complète pour les professionnels</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Comptes illimités</li>
+                        <li><i class="fas fa-check"></i> Tableaux de bord multiples</li>
+                        <li><i class="fas fa-check"></i> Suivi budgétaire personnalisé</li>
+                        <li><i class="fas fa-check"></i> Conseils d'experts financiers</li>
+                        <li><i class="fas fa-check"></i> Alertes avancées en temps réel</li>
+                        <li><i class="fas fa-check"></i> Rapports détaillés personnalisables</li>
+                        <li><i class="fas fa-check"></i> Support prioritaire 24/7</li>
+                    </ul>
+                    <a href="#demo" class="btn-pricing">Essayer 30 jours</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Questions fréquentes</h2>
+                <p class="section-description">Tout ce que vous devez savoir sur Finance Nouvelle Dimension</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Comment mes données bancaires sont-elles protégées ?</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Finance Nouvelle Dimension utilise un chiffrement de niveau bancaire (AES-256) pour protéger toutes vos données. Nous ne stockons jamais vos identifiants bancaires et respectons toutes les normes européennes de protection des données (RGPD).</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Quelles banques et institutions financières sont compatibles ?</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Notre plateforme est compatible avec plus de 400 établissements financiers en France et en Europe, incluant toutes les grandes banques françaises, les néobanques, les courtiers en ligne et de nombreuses plateformes d'investissement.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Puis-je annuler mon abonnement à tout moment ?</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolument. Vous pouvez annuler votre abonnement à tout moment depuis votre espace client. Aucun engagement de durée n'est requis et nous ne facturons pas de frais de résiliation.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Comment sont générés les conseils personnalisés ?</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nos algorithmes analysent votre situation financière, vos habitudes de dépenses et vos objectifs pour générer des recommandations pertinentes. Pour les formules Premium et Entreprise, ces conseils sont également revus par nos experts financiers certifiés.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Existe-t-il une application mobile ?</h3>
+                        <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Oui, Finance Nouvelle Dimension est disponible sur iOS et Android. Toutes les fonctionnalités de la version web sont accessibles depuis l'application mobile, vous permettant de suivre vos finances où que vous soyez.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="demo" class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Prêt à transformer votre gestion financière ?</h2>
+                <p>Rejoignez des milliers d'utilisateurs qui ont déjà donné une nouvelle dimension à leur argent.</p>
+                <div class="hero-cta justify-center">
+                    <a href="#" class="btn-primary" id="cta-signup-button">Commencer maintenant</a>
+                </div>
+                <p class="form-disclaimer text-center">Essai gratuit de 30 jours, sans engagement. Aucune carte bancaire requise.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">Finance<span>ND</span></div>
+                    <p>Donnez une nouvelle dimension à votre argent avec notre plateforme complète de gestion patrimoniale.</p>
+                    <div class="social-icons">
+                        <a href="https://discord.gg/d3Js2PhsT8" target="_blank"><i class="fab fa-discord"></i></a>
+                        <a href="https://x.com/BlossomWealthFR" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/finsya" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/finsya_fr/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Produit</h3>
+                    <ul>
+                        <li><a href="#fonctionnalites">Fonctionnalités</a></li>
+                        <li><a href="#tarifs">Tarifs</a></li>
+                        <li><a href="#temoignages">Témoignages</a></li>
+                        <li><a href="#">Partenaires</a></li>
+                        <li><a href="#">Actualités</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Ressources</h3>
+                    <ul>
+                        <li><a href="https://www.finsya.com/blog">Blog</a></li>
+                        <li><a href="https://www.finsya.com/guide">Guide gratuit</a></li>
+                        <li><a href="#">Webinaires</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Centre d'aide</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Entreprise</h3>
+                    <ul>
+                        <li><a href="#">À propos</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Carrières</a></li>
+                        <li><a href="#">Presse</a></li>
+                        <li><a href="#">Investisseurs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Légal</h3>
+                    <ul>
+                        <li><a href="#">Confidentialité</a></li>
+                        <li><a href="#">Conditions d'utilisation</a></li>
+                        <li><a href="#">Cookies</a></li>
+                        <li><a href="#">Sécurité</a></li>
+                        <li><a href="#">Mentions légales</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Finance Nouvelle Dimension. Tous droits réservés.</p>
+                <div class="app-links">
+                    <a href="#" class="app-button">
+                        <i class="fab fa-google-play"></i>
+                        <span>Google Play</span>
+                    </a>
+                    <a href="#" class="app-button">
+                        <i class="fab fa-apple"></i>
+                        <span>App Store</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="script.js"></script>
 </body>
 </html>
