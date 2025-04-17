@@ -89,12 +89,34 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialisation du menu mobile et autres fonctionnalités
   const menuToggle = document.querySelector('.menu-toggle');
   const navMenu = document.querySelector('.nav-menu');
+  const dropdownToggle = document.querySelectorAll('.dropdown-toggle');
 
   if (menuToggle) {
     menuToggle.addEventListener('click', function() {
       navMenu.classList.toggle('active');
     });
   }
+
+  // Make sure dropdown menus work correctly
+  if (dropdownToggle.length > 0) {
+    dropdownToggle.forEach(toggle => {
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent the # link from scrolling to top
+        const parent = this.parentElement;
+        parent.classList.toggle('active');
+      });
+    });
+  }
+
+  // Allow clicking outside to close dropdowns
+  document.addEventListener('click', function(e) {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(dropdown => {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('active');
+      }
+    });
+  }, true);
 
   // Gestion des onglets du dashboard
   const tabButtons = document.querySelectorAll('.tab-button');
