@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
   // Sélectionner les éléments
   const loginBtn = document.getElementById('loginBtn');
@@ -252,5 +251,21 @@ document.addEventListener('DOMContentLoaded', function() {
         link._hasClickListener = true;
       }
     }
+  });
+
+  // Product type switching functionality
+  const productButtons = document.querySelectorAll('.product-type-button');
+  
+  productButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Remove active class from all buttons
+      productButtons.forEach(btn => btn.classList.remove('active'));
+      // Add active class to clicked button
+      this.classList.add('active');
+      
+      // Here you would typically load different products based on the type
+      // For now, we'll just log the selected type
+      console.log('Selected product type:', this.dataset.type);
+    });
   });
 });
