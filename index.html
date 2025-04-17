@@ -325,264 +325,119 @@
     </section>
 
     <!-- Features Section -->
-    <section id="features-section" class="features-showcase">
+    <section id="features" class="features-new">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Types de produits suivis</h2>
                 <p class="section-description">Connectez et suivez tous vos investissements en un seul endroit</p>
             </div>
             
-            <div class="features-grid">
-                <div class="product-types">
-                    <button class="product-type-button active" data-product="immobilier">
+            <div class="products-grid">
+                <div class="products-menu">
+                    <button class="product-button active" data-product="immobilier">
                         <i class="fas fa-building"></i>
                         <span>Immobilier</span>
                     </button>
-                    <button class="product-type-button" data-product="crypto">
+                    <button class="product-button" data-product="crypto">
                         <i class="fab fa-bitcoin"></i>
                         <span>Cryptomonnaies</span>
                     </button>
-                    <button class="product-type-button" data-product="epargne">
+                    <button class="product-button" data-product="epargne">
                         <i class="fas fa-piggy-bank"></i>
                         <span>Épargne</span>
                     </button>
-                    <button class="product-type-button" data-product="actions">
+                    <button class="product-button" data-product="actions">
                         <i class="fas fa-chart-line"></i>
                         <span>Actions</span>
                     </button>
-                    <button class="product-type-button" data-product="business">
+                    <button class="product-button" data-product="business">
                         <i class="fas fa-handshake"></i>
                         <span>Business</span>
                     </button>
-                    <button class="product-type-button" data-product="luxe">
+                    <button class="product-button" data-product="luxe">
                         <i class="fas fa-gem"></i>
                         <span>Luxe</span>
                     </button>
                 </div>
-                
-                <div class="product-examples">
-                    <!-- Immobilier -->
-                    <div class="product-examples-container active" id="immobilier-examples">
-                        <div class="product-cards">
-                            <div class="product-card">
-                                <div class="product-header">
-                                    <span class="product-icon">🏠</span>
-                                    <div class="product-name">
-                                        <h4>Studio Paris</h4>
-                                    </div>
-                                </div>
-                                <div class="product-value">280 000 €</div>
-                                <div class="product-change">+15 000 € (+5.66%)</div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-header">
-                                    <span class="product-icon">🏡</span>
-                                    <div class="product-name">
-                                        <h4>Maison Bordeaux</h4>
-                                    </div>
-                                </div>
-                                <div class="product-value">450 000 €</div>
-                                <div class="product-change">+22 000 € (+5.14%)</div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-header">
-                                    <span class="product-icon">🏢</span>
-                                    <div class="product-name">
-                                        <h4>Appartement Lyon</h4>
-                                    </div>
-                                </div>
-                                <div class="product-value">320 000 €</div>
-                                <div class="product-change">+18 000 € (+5.94%)</div>
-                            </div>
-                        </div>
+
+                <div class="products-showcase">
+                    <div id="product-cards" class="product-cards">
+                        <!-- Les cartes seront ajoutées dynamiquement via JavaScript -->
                     </div>
-                    
-                    <!-- Crypto -->
-                    <div class="product-examples-container" id="crypto-examples">
-                        <div class="product-cards">
-                            <div class="product-card">
-                                <div class="product-header">
-                                    <span class="product-icon">₿</span>
-                                    <div class="product-name">
-                                        <h4>Bitcoin</h4>
-                                    </div>
-                                </div>
-                                <div class="product-value">42 230 €</div>
-                                <div class="product-change">+3 815 € (+9.93%)</div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-header">
-                                    <span class="product-icon">Ξ</span>
-                                    <div class="product-name">
-                                        <h4>Ethereum</h4>
-                                    </div>
-                                </div>
-                                <div class="product-value">2 950 €</div>
-                                <div class="product-change">+210 € (+7.66%)</div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-header">
-                                    <span class="product-icon">Ł</span>
-                                    <div class="product-name">
-                                        <h4>Litecoin</h4>
-                                    </div>
-                                </div>
-                                <div class="product-value">75.40 €</div>
-                                <div class="product-change">+4.20 € (+5.90%)</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Épargne -->
-                    <div class="product-examples-container" id="epargne-examples">
-                        <div class="product-cards">
-                            <div class="product-card">
-                                <div class="product-header">
-                                    <span class="product-icon">🏦</span>
-                                    <div class="product-name">
-                                        <h4>Livret A</h4>
-                                    </div>
-                                </div>
-                                <div class="product-value">12 500 €</div>
-                                <div class="product-change">+250 € (+2.04%)</div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-header">
-                                    <span class="product-icon">💰</span>
-                                    <div class="product-name">
-                                        <h4>PEL</h4>
-                                    </div>
-                                </div>
-                                <div class="product-value">8 750 €</div>
-                                <div class="product-change">+175 € (+2.04%)</div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-header">
-                                    <span class="product-icon">📜</span>
-                                    <div class="product-name">
-                                        <h4>Assurance Vie</h4>
-                                    </div>
-                                </div>
-                                <div class="product-value">45 000 €</div>
-                                <div class="product-change">+900 € (+2.04%)</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Actions -->
-                    <div class="product-examples-container" id="actions-examples">
-                        <div class="product-cards">
-                            <div class="product-card">
-                                <div class="product-header">
-                                    <span class="product-icon">🚗</span>
-                                    <div class="product-name">
-                                        <h4>Tesla</h4>
-                                    </div>
-                                </div>
-                                <div class="product-value">780 €</div>
-                                <div class="product-change">+35 € (+4.69%)</div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-header">
-                                    <span class="product-icon">🍎</span>
-                                    <div class="product-name">
-                                        <h4>Apple</h4>
-                                    </div>
-                                </div>
-                                <div class="product-value">170 €</div>
-                                <div class="product-change">+8 € (+4.94%)</div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-header">
-                                    <span class="product-icon">🔎</span>
-                                    <div class="product-name">
-                                        <h4>Google</h4>
-                                    </div>
-                                </div>
-                                <div class="product-value">2 500 €</div>
-                                <div class="product-change">+120 € (+5.04%)</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Business -->
-                    <div class="product-examples-container" id="business-examples">
-                        <div class="product-cards">
-                            <div class="product-card">
-                                <div class="product-header">
-                                    <span class="product-icon">🛍️</span>
-                                    <div class="product-name">
-                                        <h4>CA Boutique</h4>
-                                    </div>
-                                </div>
-                                <div class="product-value">50 000 €</div>
-                                <div class="product-change">+2 500 € (+5.26%)</div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-header">
-                                    <span class="product-icon">🍽️</span>
-                                    <div class="product-name">
-                                        <h4>CA Restaurant</h4>
-                                    </div>
-                                </div>
-                                <div class="product-value">80 000 €</div>
-                                <div class="product-change">+4 000 € (+5.26%)</div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-header">
-                                    <span class="product-icon">🏢</span>
-                                    <div class="product-name">
-                                        <h4>CA Agence</h4>
-                                    </div>
-                                </div>
-                                <div class="product-value">120 000 €</div>
-                                <div class="product-change">+6 000 € (+5.26%)</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Luxe -->
-                    <div class="product-examples-container" id="luxe-examples">
-                        <div class="product-cards">
-                            <div class="product-card">
-                                <div class="product-header">
-                                    <span class="product-icon">⌚</span>
-                                    <div class="product-name">
-                                        <h4>Rolex</h4>
-                                    </div>
-                                </div>
-                                <div class="product-value">15 000 €</div>
-                                <div class="product-change">+750 € (+5.26%)</div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-header">
-                                    <span class="product-icon">🛥️</span>
-                                    <div class="product-name">
-                                        <h4>Yacht</h4>
-                                    </div>
-                                </div>
-                                <div class="product-value">2 500 000 €</div>
-                                <div class="product-change">+125 000 € (+5.26%)</div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-header">
-                                    <span class="product-icon">🏎️</span>
-                                    <div class="product-name">
-                                        <h4>Ferrari</h4>
-                                    </div>
-                                </div>
-                                <div class="product-value">300 000 €</div>
-                                <div class="product-change">+15 000 € (+5.26%)</div>
-                            </div>
-                        </div>
-                    </div>
+                    <button class="carousel-btn prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <div id="features"></div>
+    <!-- How It Works Section -->
+    <section class="use-cases">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Solutions adaptées à vos besoins</h2>
+                <p class="section-description">Que vous soyez investisseur débutant ou expert, notre plateforme s'adapte à tous les profils</p>
+            </div>
+            
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Pour les Particuliers</h3>
+                    <ul>
+                        <li>Agrégation de tous vos comptes personnels</li>
+                        <li>Suivi de budget et dépenses</li>
+                        <li>Planification de la retraite</li>
+                        <li>Conseils d'épargne personnalisés</li>
+                    </ul>
+                </div>
+                
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Pour les Professionnels</h3>
+                    <ul>
+                        <li>Séparation des finances personnelles et professionnelles</li>
+                        <li>Optimisation fiscale pour entrepreneurs</li>
+                        <li>Gestion de trésorerie avancée</li>
+                        <li>Prévisions financières pour votre activité</li>
+                    </ul>
+                </div>
+                
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Pour les Familles</h3>
+                    <ul>
+                        <li>Gestion patrimoniale familiale</li>
+                        <li>Planification successorale</li>
+                        <li>Épargne pour études des enfants</li>
+                        <li>Protection financière du foyer</li>
+                    </ul>
+                </div>
+                
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Pour les Investisseurs</h3>
+                    <ul>
+                        <li>Suivi de portefeuille multi-actifs</li>
+                        <li>Analyse de performance détaillée</li>
+                        <li>Alertes sur opportunités d'investissement</li>
+                        <li>Optimisation de l'allocation d'actifs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Testimonials Section -->
     <section id="temoignages" class="testimonials">
@@ -791,87 +646,118 @@
                 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>Puis-je essayer avant de m'engager ?</h3>
+                        <h3>Comment sont générés les conseils personnalisés ?</h3>
                         <span class="faq-icon"><i class="fas fa-plus"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>Oui, nous offrons une période d'essai gratuite de 30 jours pour toutes nos formules sans engagement. Vous pouvez tester toutes les fonctionnalités et décider ensuite si notre solution vous convient.</p>
+                        <p>Nos algorithmes analysent votre situation financière, vos habitudes de dépenses et vos objectifs pour générer des recommandations pertinentes. Pour les formules Premium et Entreprise, ces conseils sont également revus par nos experts financiers certifiés.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>Quel niveau de sécurité offrez-vous ?</h3>
+                        <h3>Existe-t-il une application mobile ?</h3>
                         <span class="faq-icon"><i class="fas fa-plus"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>Nous utilisons les dernières technologies de chiffrement et nos serveurs sont hébergés dans des data centers sécurisés en Europe. Vos données financières sont protégées selon les normes bancaires les plus strictes et nous ne stockons jamais vos identifiants bancaires.</p>
+                        <p>Oui, Finance Nouvelle Dimension est disponible sur iOS et Android. Toutes les fonctionnalités de la version web sont accessibles depuis l'application mobile, vous permettant de suivre vos finances où que vous soyez.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer class="main-footer">
+    <!-- CTA Section -->
+    <section id="demo" class="cta">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo-container">
-                    <img src="../assets/logo.svg" alt="Finsya Logo" class="logo-img">
+            <div class="cta-content">
+                <h2>Prêt à transformer votre gestion financière ?</h2>
+                <p>Rejoignez des milliers d'utilisateurs qui ont déjà donné une nouvelle dimension à leur argent.</p>
+                <div class="hero-cta justify-center">
+                    <a href="#" class="btn-primary" id="cta-signup-button">Commencer maintenant</a>
                 </div>
-                <div class="footer-links-container">
-                    <div class="footer-links-column">
-                        <h3>Produit</h3>
-                        <ul class="footer-links">
-                            <li><a href="#fonctionnalites">Fonctionnalités</a></li>
-                            <li><a href="#tarifs">Tarifs</a></li>
-                            <li><a href="roadmap.html">Roadmap</a></li>
-                            <li><a href="securite.html">Sécurité</a></li>
-                        </ul>
+                <p class="form-disclaimer text-center">Essai gratuit de 30 jours, sans engagement. Aucune carte bancaire requise.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">Finance<span>ND</span></div>
+                    <p>Donnez une nouvelle dimension à votre argent avec notre plateforme complète de gestion patrimoniale.</p>
+                    <div class="social-icons">
+                        <a href="https://discord.gg/d3Js2PhsT8" target="_blank"><i class="fab fa-discord"></i></a>
+                        <a href="https://x.com/BlossomWealthFR" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/finsya" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/finsya_fr/" target="_blank"><i class="fab fa-instagram"></i></a>
                     </div>
-                    <div class="footer-links-column">
-                        <h3>Ressources</h3>
-                        <ul class="footer-links">
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="guides.html">Guides</a></li>
-                            <li><a href="support.html">Support</a></li>
-                            <li><a href="https://discord.gg/d3Js2PhsT8">Communauté</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-links-column">
-                        <h3>Société</h3>
-                        <ul class="footer-links">
-                            <li><a href="story.html">Notre histoire</a></li>
-                            <li><a href="team.html">L'équipe</a></li>
-                            <li><a href="carriere.html">Carrières</a></li>
-                            <li><a href="presse.html">Presse</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-links-column">
-                        <h3>Légal</h3>
-                        <ul class="footer-links">
-                            <li><a href="conditions.html">Conditions d'utilisation</a></li>
-                            <li><a href="privacy.html">Politique de confidentialité</a></li>
-                            <li><a href="cookies.html">Politique de cookies</a></li>
-                            <li><a href="rgpd.html">Conformité RGPD</a></li>
-                        </ul>
-                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Produit</h3>
+                    <ul>
+                        <li><a href="#fonctionnalites">Fonctionnalités</a></li>
+                        <li><a href="#tarifs">Tarifs</a></li>
+                        <li><a href="#temoignages">Témoignages</a></li>
+                        <li><a href="#">Partenaires</a></li>
+                        <li><a href="#">Actualités</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Ressources</h3>
+                    <ul>
+                        <li><a href="https://www.finsya.com/blog">Blog</a></li>
+                        <li><a href="https://www.finsya.com/guide">Guide gratuit</a></li>
+                        <li><a href="#">Webinaires</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Centre d'aide</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Entreprise</h3>
+                    <ul>
+                        <li><a href="#">À propos</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Carrières</a></li>
+                        <li><a href="#">Presse</a></li>
+                        <li><a href="#">Investisseurs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Légal</h3>
+                    <ul>
+                        <li><a href="#">Confidentialité</a></li>
+                        <li><a href="#">Conditions d'utilisation</a></li>
+                        <li><a href="#">Cookies</a></li>
+                        <li><a href="securite.html">Sécurité</a></li>
+                        <li><a href="#">Mentions légales</a></li>
+                    </ul>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <div class="footer-social">
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-                </div>
-                <div class="footer-copyright">
-                    <p>&copy; 2025 Finsya. Tous droits réservés.</p>
+                <p>&copy; 2025 Finance Nouvelle Dimension. Tous droits réservés.</p>
+                <div class="app-links">
+                    <a href="#" class="app-button">
+                        <i class="fab fa-google-play"></i>
+                        <span>Google Play</span>
+                    </a>
+                    <a href="#" class="app-button">
+                        <i class="fab fa-apple"></i>
+                        <span>App Store</span>
+                    </a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Script -->
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Building, Bitcoin, PiggyBank, Rocket, Handshake, Diamond } from 'lucide-react';
 import { Card } from '@/components/ui/card';
@@ -198,7 +197,7 @@ export default function Features() {
   const [selectedProduct, setSelectedProduct] = useState(products[0]);
 
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-gray-50">
+    <section className="py-24 bg-white">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
           Types de produits suivis
@@ -262,4 +261,3 @@ export default function Features() {
     </section>
   );
 }
-

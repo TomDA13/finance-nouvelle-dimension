@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
   // Sélectionner les éléments
   const loginBtn = document.getElementById('loginBtn');
@@ -251,22 +252,5 @@ document.addEventListener('DOMContentLoaded', function() {
         link._hasClickListener = true;
       }
     }
-  });
-
-  // Product type switching functionality
-  const productButtons = document.querySelectorAll('.product-type-button');
-  const productExamples = document.querySelectorAll('.product-examples-container');
-  
-  productButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      // Reset active state
-      productButtons.forEach(btn => btn.classList.remove('active'));
-      productExamples.forEach(example => example.classList.remove('active'));
-      
-      // Set active state
-      button.classList.add('active');
-      const productType = button.getAttribute('data-product');
-      document.getElementById(`${productType}-examples`).classList.add('active');
-    });
   });
 });
