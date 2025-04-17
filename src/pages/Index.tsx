@@ -1,15 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
 import DashboardTabs from '../components/DashboardTabs';
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils";
 
 const Index = () => {
   const [showLoginForm, setShowLoginForm] = useState(false);
@@ -64,78 +55,16 @@ const Index = () => {
             <span></span>
             <span></span>
           </div>
-          
-          <div className="nav-menu-container">
-            <NavigationMenu>
-              <NavigationMenuList className="nav-menu">
-                <NavigationMenuItem>
-                  <NavigationMenuLink href="#fonctionnalites" className="nav-link">
-                    Fonctionnalités
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-                
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="nav-link">Ressources</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="dropdown-menu">
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <a href="https://www.finsya.com/guide" className="dropdown-item">Guide gratuit</a>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <a href="https://www.finsya.com/blog" className="dropdown-item">Blog</a>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <a href="https://discord.gg/d3Js2PhsT8" className="dropdown-item">Communauté</a>
-                        </NavigationMenuLink>
-                      </li>
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-                
-                <NavigationMenuItem>
-                  <NavigationMenuLink href="#tarifs" className="nav-link">
-                    Tarifs
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-                
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="nav-link">A propos</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="dropdown-menu">
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <a href="#" className="dropdown-item">Notre histoire</a>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <a href="#" className="dropdown-item">Sécurité</a>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <a href="#" className="dropdown-item">Roadmap</a>
-                        </NavigationMenuLink>
-                      </li>
-                      <li>
-                        <NavigationMenuLink asChild>
-                          <a href="#" className="dropdown-item">Contact</a>
-                        </NavigationMenuLink>
-                      </li>
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-                
-                <li className="nav-auth-button"><a href="#" onClick={openLoginForm}>Se connecter</a></li>
-                <li className="nav-auth-button"><a href="#" onClick={openSignupForm} className="btn-primary">S'inscrire</a></li>
-              </NavigationMenuList>
-            </NavigationMenu>
-          </div>
+          <ul className="nav-menu">
+            <li><a href="#fonctionnalites">Fonctionnalités</a></li>
+            <li><a href="#pourquoi">Pourquoi Nous</a></li>
+            <li><a href="#temoignages">Témoignages</a></li>
+            <li><a href="#tarifs">Tarifs</a></li>
+            <div className="nav-auth-buttons">
+              <li><a href="#" onClick={openLoginForm}>Se connecter</a></li>
+              <li><a href="#" onClick={openSignupForm}>S'inscrire</a></li>
+            </div>
+          </ul>
         </div>
       </nav>
       
