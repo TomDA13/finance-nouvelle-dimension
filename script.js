@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const switchToLogin = document.getElementById('switchToLogin');
   const ctaSignupButton = document.getElementById('cta-signup-button');
   const heroSignupButton = document.querySelector('.hero-cta .btn-primary');
+  const startFreeButton = document.querySelector('.hero-cta a.btn-primary');
 
   // Fonction pour ouvrir le formulaire de connexion
   function openLoginForm(e) {
@@ -91,6 +92,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if (heroSignupButton) {
     heroSignupButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      openSignupForm();
+    });
+  }
+
+  // Ajouter un écouteur d'événement pour le bouton "Commencer gratuitement"
+  if (startFreeButton) {
+    startFreeButton.addEventListener('click', function(e) {
       e.preventDefault();
       openSignupForm();
     });
