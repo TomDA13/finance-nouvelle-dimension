@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import DashboardTabs from '../components/DashboardTabs';
+import Features from '../components/Features';
 
 const Index = () => {
   const [showLoginForm, setShowLoginForm] = useState(false);
@@ -203,31 +204,7 @@ const Index = () => {
       </section>
       
       {/* Features Section */}
-      <section className="features" id="features">
-        <div className="container">
-          <div className="section-header">
-            <h2>Fonctionnalités Principales</h2>
-            <p className="section-description">Découvrez comment notre plateforme peut transformer votre gestion financière</p>
-          </div>
-          <div className="features-grid">
-            <div className="feature-card">
-              <div className="feature-icon">💰</div>
-              <h3>Agrégation de Comptes</h3>
-              <p>Connectez tous vos comptes bancaires en un seul endroit</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">📊</div>
-              <h3>Analyse Financière</h3>
-              <p>Obtenez des insights détaillés sur vos finances</p>
-            </div>
-            <div className="feature-card">
-              <div className="feature-icon">🔒</div>
-              <h3>Sécurité Avancée</h3>
-              <p>Vos données sont protégées par un chiffrement de niveau bancaire</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Features />
       
       {/* Dashboard Preview Section */}
       <section className="dashboard-preview">
