@@ -31,3 +31,17 @@
 .form-popup-overlay.active {
   display: flex;
 }
+
+/* Style pour le texte du logo de secours */
+.logo-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4a6cf7;
+  text-decoration: none;
+  padding: 10px 0;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
