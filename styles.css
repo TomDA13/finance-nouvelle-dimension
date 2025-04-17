@@ -253,9 +253,6 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
 }
 
 .logo-container {
@@ -272,13 +269,10 @@ p {
 .nav-menu {
     display: flex;
     align-items: center;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .nav-menu li {
-    margin: 0 15px;
+    margin-left: 30px;
 }
 
 .nav-menu li a {
@@ -315,16 +309,6 @@ p {
     display: none;
 }
 
-.nav-auth-buttons {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.nav-auth-buttons a {
-    text-decoration: none;
-}
-
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -340,8 +324,10 @@ p {
 }
 
 /* Hero Section */
+/* HERO MODIFIÉ - Centré avec ajustements */
+
 .hero {
-  padding-top: 200px;
+  padding-top: 200px; /* plus d'espace avec la navbar */
   padding-bottom: 120px;
   position: relative;
   background: linear-gradient(
@@ -390,6 +376,7 @@ p {
   margin-bottom: 40px;
 }
 
+/* DÉPLACÉ APRÈS L'IMAGE */
 .hero-stats {
   display: flex;
   justify-content: center;
@@ -404,8 +391,8 @@ p {
 }
 
 .stat-number {
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 2rem; /* plus gros */
+  font-weight: 800; /* plus gras */
   color: var(--text-dark);
   display: block;
 }
@@ -480,20 +467,6 @@ p {
 
 /* Responsive Dropdown Menu for Mobile */
 @media (max-width: 768px) {
-  .nav-menu {
-    position: static;
-    transform: none;
-    left: auto;
-    justify-content: center;
-    width: 100%;
-    margin-top: 15px;
-  }
-  
-  .navbar .container {
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
   .dropdown-menu {
     position: static;
     width: 100%;
@@ -511,10 +484,6 @@ p {
   .dropdown-toggle {
     justify-content: space-between;
     width: 100%;
-  }
-  
-  .nav-auth-buttons {
-    margin-left: auto;
   }
 }
 
@@ -1288,7 +1257,7 @@ input:checked + .slider:before {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
-  display: none;
+  display: none; /* Hidden by default */
   justify-content: center;
   align-items: center;
   z-index: 2000;
