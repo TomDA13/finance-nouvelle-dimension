@@ -255,17 +255,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Product type switching functionality
   const productButtons = document.querySelectorAll('.product-type-button');
+  const productExamples = document.querySelectorAll('.product-examples-container');
   
   productButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      // Remove active class from all buttons
+    button.addEventListener('click', () => {
+      // Reset active state
       productButtons.forEach(btn => btn.classList.remove('active'));
-      // Add active class to clicked button
-      this.classList.add('active');
+      productExamples.forEach(example => example.classList.remove('active'));
       
-      // Here you would typically load different products based on the type
-      // For now, we'll just log the selected type
-      console.log('Selected product type:', this.dataset.type);
+      // Set active state
+      button.classList.add('active');
+      const productType = button.getAttribute('data-product');
+      document.getElementById(`${productType}-examples`).classList.add('active');
     });
   });
 });
