@@ -185,4 +185,31 @@ document.addEventListener('DOMContentLoaded', function() {
       contactForm.reset();
     });
   }
+
+  // Gérer le logo manquant en ajoutant un texte de remplacement
+  const logoContainer = document.querySelector('.logo-container');
+  if (logoContainer) {
+    const logoImg = logoContainer.querySelector('.logo-img');
+    if (logoImg && (!logoImg.complete || logoImg.naturalWidth === 0)) {
+      // Si l'image du logo ne se charge pas, afficher un texte de remplacement
+      if (!logoContainer.querySelector('.logo-text-fallback')) {
+        const logoText = document.createElement('div');
+        logoText.className = 'logo-text-fallback';
+        logoText.textContent = 'Finsya';
+        logoContainer.appendChild(logoText);
+      }
+    }
+    
+    // Vérifier l'état de l'image après chargement
+    if (logoImg) {
+      logoImg.addEventListener('error', function() {
+        if (!logoContainer.querySelector('.logo-text-fallback')) {
+          const logoText = document.createElement('div');
+          logoText.className = 'logo-text-fallback';
+          logoText.textContent = 'Finsya';
+          logoContainer.appendChild(logoText);
+        }
+      });
+    }
+  }
 });

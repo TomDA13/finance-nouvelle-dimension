@@ -31,3 +31,28 @@
 .form-popup-overlay.active {
   display: flex;
 }
+
+/* Style pour le texte de remplacement du logo */
+.logo-text-fallback {
+  font-size: 24px;
+  font-weight: 700;
+  color: #3366FF;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Assurer que tous les liens de navigation fonctionnent */
+.navbar a, .footer a {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar a:hover, .footer a:hover {
+  color: #3366FF;
+}
+
+/* Style pour les liens actifs */
+.nav-menu a.active {
+  color: #3366FF;
+  font-weight: 500;
+}
