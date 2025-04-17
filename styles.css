@@ -1,3 +1,4 @@
+
 /* Base Styles and Variables */
 :root {
   --primary: #FA5003;
@@ -269,6 +270,9 @@ p {
 .nav-menu {
     display: flex;
     align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .nav-menu li {
