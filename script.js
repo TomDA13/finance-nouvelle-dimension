@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
   // Sélectionner les éléments
   const loginBtn = document.getElementById('loginBtn');
@@ -162,6 +163,17 @@ document.addEventListener('DOMContentLoaded', function() {
         const faqItem = this.parentNode;
         faqItem.classList.toggle('active');
       });
+    });
+  }
+
+  // Gestion du formulaire de contact
+  const contactForm = document.getElementById('contactForm');
+  
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Votre message a été envoyé avec succès !');
+      contactForm.reset();
     });
   }
 });
