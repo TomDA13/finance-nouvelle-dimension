@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="story.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Navbar -->
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="logo-container">
@@ -19,56 +19,42 @@
                     <img src="public/lovable-uploads/a0c21298-b6d2-4958-9ab5-06fe3ff334b4.png" alt="Logo" class="logo-img">
                 </a>
             </div>
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            
             <ul class="nav-menu">
-                <li><a href="index.html">Accueil</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">Produits <i class="fas fa-chevron-down"></i></a>
-                    <div class="dropdown-menu">
-                        <a href="#">Tableau de bord</a>
-                        <a href="#">Analyse de données</a>
-                        <a href="#">Reporting</a>
-                        <a href="#">Intégrations</a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">Solutions <i class="fas fa-chevron-down"></i></a>
-                    <div class="dropdown-menu">
-                        <a href="#">Pour les startups</a>
-                        <a href="#">Pour les PME</a>
-                        <a href="#">Pour les grandes entreprises</a>
-                        <a href="#">Pour les e-commerces</a>
-                    </div>
-                </li>
+                <li><a href="index.html#fonctionnalites">Fonctionnalités</a></li>
+                
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">Ressources <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-menu">
-                        <a href="#">Blog</a>
-                        <a href="#">Guides</a>
-                        <a href="#">Webinaires</a>
-                        <a href="#">Études de cas</a>
+                        <a href="https://www.finsya.com/guide">Guide gratuit</a>
+                        <a href="https://www.finsya.com/blog">Blog</a>
+                        <a href="https://discord.gg/d3Js2PhsT8">Communauté</a>
                     </div>
                 </li>
+                
+                <li><a href="index.html#tarifs">Tarifs</a></li>
+                
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">À propos <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-menu">
                         <a href="story.html">Notre histoire</a>
                         <a href="securite.html">Sécurité</a>
                         <a href="roadmap.html">Roadmap</a>
-                        <a href="#">Carrières</a>
                         <a href="contact.html">Contact</a>
                     </div>
                 </li>
-                <li><a href="#">Tarifs</a></li>
-                <li class="nav-auth-buttons">
-                    <a href="#" id="loginBtn" class="btn-outline">Connexion</a>
-                    <a href="#" id="signupBtn" class="btn-primary">Essai gratuit</a>
-                </li>
             </ul>
+            
+            <div class="nav-auth-buttons">
+                <a href="#" id="loginBtn" class="btn-outline">Se connecter</a>
+                <a href="#" id="signupBtn" class="btn-primary">S'inscrire</a>
+            </div>
+            
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
@@ -320,56 +306,68 @@
     </footer>
 
     <!-- Login Form Popup -->
-    <div id="loginFormPopup" class="auth-popup">
-        <div class="auth-popup-content">
-            <span class="close-button">&times;</span>
-            <h2>Connexion</h2>
+    <div id="loginFormPopup" class="form-popup-overlay">
+        <div class="form-popup">
+            <div class="form-header">
+                <h2>Connexion</h2>
+                <button class="close-button">&times;</button>
+            </div>
             <form class="auth-form">
                 <div class="form-group">
-                    <label for="loginEmail">Email</label>
-                    <input type="email" id="loginEmail" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Votre adresse email" required>
                 </div>
                 <div class="form-group">
-                    <label for="loginPassword">Mot de passe</label>
-                    <input type="password" id="loginPassword" required>
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" name="password" placeholder="Votre mot de passe" required>
                 </div>
-                <div class="form-group">
+                <div class="form-group remember-forgot">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">Se souvenir de moi</label>
+                    </div>
                     <a href="#" class="forgot-password">Mot de passe oublié?</a>
                 </div>
-                <button type="submit" class="btn-primary">Se connecter</button>
+                <button type="submit" class="form-submit-btn">Se connecter</button>
             </form>
-            <div class="auth-switch">
-                <p>Pas encore de compte? <a href="#" id="switchToSignup">S'inscrire</a></p>
+            <div class="form-footer">
+                <p>Vous n'avez pas de compte? <a href="#" id="switchToSignup">S'inscrire</a></p>
             </div>
         </div>
     </div>
 
     <!-- Signup Form Popup -->
-    <div id="signupFormPopup" class="auth-popup">
-        <div class="auth-popup-content">
-            <span class="close-button">&times;</span>
-            <h2>Créer un compte</h2>
+    <div id="signupFormPopup" class="form-popup-overlay">
+        <div class="form-popup">
+            <div class="form-header">
+                <h2>Créer un compte</h2>
+                <button class="close-button">&times;</button>
+            </div>
             <form class="auth-form">
                 <div class="form-group">
-                    <label for="signupName">Nom complet</label>
-                    <input type="text" id="signupName" required>
+                    <label for="fullname">Nom complet</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Votre nom complet" required>
                 </div>
                 <div class="form-group">
-                    <label for="signupEmail">Email professionnel</label>
-                    <input type="email" id="signupEmail" required>
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" name="email" placeholder="Votre adresse email" required>
                 </div>
                 <div class="form-group">
-                    <label for="signupPassword">Mot de passe</label>
-                    <input type="password" id="signupPassword" required>
+                    <label for="signup-password">Mot de passe</label>
+                    <input type="password" id="signup-password" name="password" placeholder="Créez un mot de passe" required>
                 </div>
                 <div class="form-group">
-                    <label for="companyName">Nom de l'entreprise</label>
-                    <input type="text" id="companyName">
+                    <label for="confirm-password">Confirmer le mot de passe</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirmez votre mot de passe" required>
                 </div>
-                <button type="submit" class="btn-primary">Créer un compte</button>
+                <div class="form-group terms">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">J'accepte les <a href="#">conditions d'utilisation</a> et la <a href="#">politique de confidentialité</a></label>
+                </div>
+                <button type="submit" class="form-submit-btn">Créer mon compte</button>
             </form>
-            <div class="auth-switch">
-                <p>Déjà un compte? <a href="#" id="switchToLogin">Se connecter</a></p>
+            <div class="form-footer">
+                <p>Vous avez déjà un compte? <a href="#" id="switchToLogin">Se connecter</a></p>
             </div>
         </div>
     </div>

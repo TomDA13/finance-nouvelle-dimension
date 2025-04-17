@@ -32,8 +32,13 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Gestion des clics
-  loginBtn.addEventListener('click', openLoginForm);
-  signupBtn.addEventListener('click', openSignupForm);
+  if (loginBtn) {
+    loginBtn.addEventListener('click', openLoginForm);
+  }
+  
+  if (signupBtn) {
+    signupBtn.addEventListener('click', openSignupForm);
+  }
   
   // Fermer les formulaires quand on clique sur le bouton de fermeture
   closeButtons.forEach(button => {
@@ -41,22 +46,26 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Basculer entre les formulaires
-  switchToSignup.addEventListener('click', function(e) {
-    e.preventDefault();
-    openSignupForm();
-  });
+  if (switchToSignup) {
+    switchToSignup.addEventListener('click', function(e) {
+      e.preventDefault();
+      openSignupForm();
+    });
+  }
 
-  switchToLogin.addEventListener('click', function(e) {
-    e.preventDefault();
-    openLoginForm();
-  });
+  if (switchToLogin) {
+    switchToLogin.addEventListener('click', function(e) {
+      e.preventDefault();
+      openLoginForm();
+    });
+  }
 
   // Fermer les formulaires quand on clique en dehors
   window.addEventListener('click', function(e) {
-    if (e.target === loginFormPopup) {
+    if (loginFormPopup && e.target === loginFormPopup) {
       closeAllForms();
     }
-    if (e.target === signupFormPopup) {
+    if (signupFormPopup && e.target === signupFormPopup) {
       closeAllForms();
     }
   });
