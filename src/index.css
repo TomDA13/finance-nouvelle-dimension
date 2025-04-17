@@ -8,3 +8,8 @@
 .nav-auth-buttons a {
   text-decoration: none;
 }
+
+/* Ajout d'une règle spécifique pour la marge des boutons */
+.nav-auth-buttons .btn-outline {
+  margin-right: 0;
+}
