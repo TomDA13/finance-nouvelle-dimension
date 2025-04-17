@@ -1,0 +1,345 @@
+
+/* Story Page Styles */
+
+/* Hero Section */
+.story-hero {
+    padding: 180px 0 100px;
+    background: linear-gradient(
+        135deg,
+        var(--bg-off-white) 0%,
+        rgba(255, 246, 240, 1) 100%
+    );
+    text-align: center;
+}
+
+.story-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+.story-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Mission Section */
+.story-mission {
+    padding: 100px 0;
+    background: var(--bg-light);
+}
+
+.mission-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.mission-text {
+    flex: 1;
+}
+
+.mission-text h2 {
+    margin-bottom: 30px;
+}
+
+.mission-text p {
+    margin-bottom: 20px;
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+.mission-image {
+    flex: 1;
+}
+
+.rounded-image {
+    border-radius: var(--border-radius-lg);
+    width: 100%;
+    height: auto;
+    box-shadow: var(--shadow-md);
+}
+
+/* Values Section */
+.story-values {
+    padding: 100px 0;
+    background: linear-gradient(to bottom, var(--bg-off-white), var(--bg-light));
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.value-card {
+    background: var(--bg-light);
+    padding: 40px 30px;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-fast);
+    border: 1px solid var(--border-light);
+    text-align: center;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-md);
+}
+
+.value-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.value-card h3 {
+    margin-bottom: 15px;
+}
+
+.value-card p {
+    color: var(--text-light);
+}
+
+/* Team Section */
+.story-team {
+    padding: 100px 0;
+    background: var(--bg-light);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.team-member {
+    background: linear-gradient(
+        135deg,
+        var(--bg-light) 0%,
+        var(--bg-off-white) 100%
+    );
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-fast);
+    border: 1px solid var(--border-light);
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-md);
+}
+
+.member-photo {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(
+        135deg,
+        rgba(250, 80, 3, 0.8) 0%,
+        rgba(255, 122, 66, 0.8) 100%
+    );
+}
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    mix-blend-mode: luminosity;
+    transition: var(--transition-fast);
+}
+
+.team-member:hover .member-photo img {
+    transform: scale(1.05);
+    mix-blend-mode: normal;
+}
+
+.team-member h3 {
+    margin: 20px 0 5px;
+    padding: 0 20px;
+}
+
+.member-title {
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding: 0 20px;
+}
+
+.member-bio {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.member-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.member-social a {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--bg-off-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    transition: var(--transition-fast);
+}
+
+.member-social a:hover {
+    background: var(--primary-gradient);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Timeline Section */
+.story-timeline {
+    padding: 100px 0;
+    background: linear-gradient(to bottom, var(--bg-light), var(--bg-off-white));
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 50px auto 0;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--primary), var(--primary-light));
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    padding-left: 100px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 44px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--primary-gradient);
+    box-shadow: 0 0 0 4px rgba(250, 80, 3, 0.2);
+}
+
+.timeline-date {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.timeline-content {
+    background: var(--bg-light);
+    padding: 30px;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+}
+
+.timeline-content h3 {
+    margin-bottom: 15px;
+}
+
+.timeline-content p {
+    color: var(--text-light);
+}
+
+/* Join Us Section */
+.story-join-us {
+    padding: 100px 0;
+    background: linear-gradient(
+        135deg,
+        rgba(250, 80, 3, 0.05) 0%,
+        rgba(255, 122, 66, 0.1) 100%
+    );
+    text-align: center;
+}
+
+.join-us-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.join-us-content h2 {
+    margin-bottom: 20px;
+}
+
+.join-us-content p {
+    margin-bottom: 30px;
+    color: var(--text-light);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .mission-content {
+        flex-direction: column;
+    }
+    
+    .mission-image {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .story-hero h1 {
+        font-size: 2.3rem;
+    }
+    
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .team-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+    
+    .timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-item {
+        padding-left: 70px;
+    }
+    
+    .timeline-dot {
+        left: 24px;
+    }
+}
+
+@media (max-width: 576px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .member-photo {
+        height: 250px;
+    }
+}
