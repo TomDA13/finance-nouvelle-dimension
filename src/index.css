@@ -1,5 +1,30 @@
 
+.navbar .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.navbar .container > * {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container {
+  margin-right: auto;
+}
+
+.nav-menu {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .nav-auth-buttons {
+  margin-left: auto;
   display: flex;
   align-items: center;
   gap: 15px;
