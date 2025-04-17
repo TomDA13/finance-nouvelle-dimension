@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import DashboardTabs from '../components/DashboardTabs';
 
@@ -73,7 +72,7 @@ const Index = () => {
               </a>
               <div className="dropdown-menu">
                 <a href="#notre-histoire">Notre histoire</a>
-                <a href="security.html">Sécurité</a>
+                <a href="#securite">Sécurité</a>
                 <a href="#roadmap">Roadmap</a>
                 <a href="#contact">Contact</a>
               </div>
