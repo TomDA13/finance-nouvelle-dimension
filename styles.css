@@ -1,3 +1,4 @@
+
 /* Base Styles and Variables */
 :root {
   --primary: #FA5003;
@@ -1092,3 +1093,74 @@ input:checked + .slider:before {
     transition: var(--transition-fast);
     border: 1px solid var(--border-light);
     position: relative;
+}
+
+/* Adding necessary additional styling for pricing cards that might have been cut off */
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.pricing-card.popular {
+    border-color: var(--primary);
+    border-width: 2px;
+    transform: scale(1.05);
+}
+
+.pricing-card.popular::before {
+    content: 'Popular';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-gradient);
+    color: white;
+    padding: 5px 15px;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.pricing-card .price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 20px 0;
+}
+
+.pricing-card .price.annual {
+    display: none;
+}
+
+.pricing-card .price small {
+    font-size: 1rem;
+    color: var(--text-lightest);
+    font-weight: 400;
+}
+
+.pricing-card ul {
+    margin: 30px 0;
+    padding: 0;
+}
+
+.pricing-card ul li {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.pricing-card ul li::before {
+    content: '✓';
+    color: var(--primary);
+    position: absolute;
+    left: 0;
+    font-weight: 600;
+}
+
+.pricing-card.enterprise {
+    background: linear-gradient(
+        135deg,
+        rgba(250, 80, 3, 0.03) 0%,
+        rgba(255, 122, 66, 0.07) 100%
+    );
+}
