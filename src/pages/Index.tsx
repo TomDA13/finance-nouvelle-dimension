@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import DashboardTabs from '../components/DashboardTabs';
 
@@ -50,21 +49,46 @@ const Index = () => {
           <div className="logo-container">
             <img src="../assets/logo.svg" alt="Finsya Logo" className="logo-img" />
           </div>
+          
+          <ul className="nav-menu">
+            <li><a href="#fonctionnalites">Fonctionnalités</a></li>
+            
+            <li className="dropdown">
+              <a href="#" className="dropdown-toggle">
+                Ressources <i className="fa fa-chevron-down"></i>
+              </a>
+              <div className="dropdown-menu">
+                <a href="#guide">Guide gratuit</a>
+                <a href="#blog">Blog</a>
+                <a href="#communaute">Communauté</a>
+              </div>
+            </li>
+            
+            <li><a href="#tarifs">Tarifs</a></li>
+            
+            <li className="dropdown">
+              <a href="#" className="dropdown-toggle">
+                À propos <i className="fa fa-chevron-down"></i>
+              </a>
+              <div className="dropdown-menu">
+                <a href="#notre-histoire">Notre histoire</a>
+                <a href="#securite">Sécurité</a>
+                <a href="#roadmap">Roadmap</a>
+                <a href="#contact">Contact</a>
+              </div>
+            </li>
+          </ul>
+          
+          <div className="nav-auth-buttons">
+            <li className="auth-item"><a href="#" onClick={openLoginForm}>Se connecter</a></li>
+            <li className="auth-item"><a href="#" onClick={openSignupForm}>S'inscrire</a></li>
+          </div>
+          
           <div className="menu-toggle">
             <span></span>
             <span></span>
             <span></span>
           </div>
-          <ul className="nav-menu">
-            <li><a href="#fonctionnalites">Fonctionnalités</a></li>
-            <li><a href="#pourquoi">Pourquoi Nous</a></li>
-            <li><a href="#temoignages">Témoignages</a></li>
-            <li><a href="#tarifs">Tarifs</a></li>
-            <div className="nav-auth-buttons">
-              <li><a href="#" onClick={openLoginForm}>Se connecter</a></li>
-              <li><a href="#" onClick={openSignupForm}>S'inscrire</a></li>
-            </div>
-          </ul>
         </div>
       </nav>
       
