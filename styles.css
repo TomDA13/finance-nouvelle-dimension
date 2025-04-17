@@ -1731,7 +1731,7 @@ input:checked + .slider:before {
 .features-new {
     background: linear-gradient(to bottom, #FFE4D6 0%, #FFF3ED 100%);
     padding: 80px 0;
-    color: var(--text-medium);
+    color: var(--text-dark);
     position: relative;
 }
 
@@ -1743,9 +1743,8 @@ input:checked + .slider:before {
 .features-new .section-title {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    background: linear-gradient(90deg, #FA5003 0%, #FF7A42 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--text-dark);
+    background: none;
 }
 
 .products-grid {
@@ -1911,7 +1910,7 @@ input:checked + .slider:before {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(to bottom, #FFF4EE 0%, #FFE4D6 100%);
+    background: linear-gradient(to bottom, #FFF4EE 0%, #FFF3ED 100%);
 }
 
 /* Trusted By Section */
