@@ -1,109 +1,254 @@
-
-import React from 'react';
-import {
+import { useState } from 'react';
+import { Building, Bitcoin, PiggyBank, Rocket, Handshake, Diamond } from 'lucide-react';
+import { Card } from '@/components/ui/card';
+import { 
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Button } from "@/components/ui/button";
 
-const features = [
+interface Product {
+  id: string;
+  name: string;
+  icon: React.ReactNode;
+  examples: Array<{
+    name: string;
+    value: string;
+    change: string;
+    changePercent: string;
+    logo: string;
+  }>;
+}
+
+const products: Product[] = [
   {
-    id: 1,
-    title: "Comptes Bancaires",
-    description: "Synchronisez tous vos comptes bancaires français et européens",
-    images: [
-      "/lovable-uploads/14e1832a-f86f-4ae3-9d46-bea4944f3dd9.png",
-      "/lovable-uploads/2a6a5a86-b14d-4933-a2a9-d0e1d5bcdcb1.png"
+    id: 'immobilier',
+    name: 'Immobilier',
+    icon: <Building className="h-6 w-6" />,
+    examples: [
+      {
+        name: "Studio Paris",
+        value: "280 000 €",
+        change: "+15 000 €",
+        changePercent: "+5.66%",
+        logo: "🏠"
+      },
+      {
+        name: "Maison Bordeaux",
+        value: "450 000 €",
+        change: "+22 000 €",
+        changePercent: "+5.14%",
+        logo: "🏡"
+      },
+      {
+        name: "Appartement Lyon",
+        value: "320 000 €",
+        change: "+18 000 €",
+        changePercent: "+5.94%",
+        logo: "🏢"
+      }
     ]
   },
   {
-    id: 2,
-    title: "Investissements",
-    description: "Suivez vos investissements en actions, ETF et crypto-monnaies",
-    images: [
-      "/lovable-uploads/48f5cc52-f093-4909-bf5b-0f784aaee850.png",
-      "/lovable-uploads/4b14f6ca-724c-4bf2-93be-a4a59647e04b.png"
+    id: 'crypto',
+    name: 'Cryptomonnaies',
+    icon: <Bitcoin className="h-6 w-6" />,
+    examples: [
+      {
+        name: "Bitcoin",
+        value: "42 230 €",
+        change: "+3 815 €",
+        changePercent: "+9.93%",
+        logo: "₿"
+      },
+      {
+        name: "Ethereum",
+        value: "2 950 €",
+        change: "+210 €",
+        changePercent: "+7.66%",
+        logo: "Ξ"
+      },
+      {
+        name: "Litecoin",
+        value: "75.40 €",
+        change: "+4.20 €",
+        changePercent: "+5.90%",
+        logo: "Ł"
+      }
     ]
   },
   {
-    id: 3,
-    title: "Immobilier",
-    description: "Gérez votre patrimoine immobilier et vos crédits",
-    images: [
-      "/lovable-uploads/5f628b49-e0d6-4237-bd0a-37f10dd502e1.png",
-      "/lovable-uploads/7c109932-9a59-4d89-8b8c-ce48414a9ea6.png"
+    id: 'epargne',
+    name: 'Épargne',
+    icon: <PiggyBank className="h-6 w-6" />,
+    examples: [
+      {
+        name: "Livret A",
+        value: "12 500 €",
+        change: "+250 €",
+        changePercent: "+2.04%",
+        logo: "🏦"
+      },
+      {
+        name: "PEL",
+        value: "8 750 €",
+        change: "+175 €",
+        changePercent: "+2.04%",
+        logo: "💰"
+      },
+      {
+        name: "Assurance Vie",
+        value: "45 000 €",
+        change: "+900 €",
+        changePercent: "+2.04%",
+        logo: "📜"
+      }
     ]
   },
   {
-    id: 4,
-    title: "Assurance Vie",
-    description: "Optimisez vos contrats d'assurance vie et leur performance",
-    images: [
-      "/lovable-uploads/a0c21298-b6d2-4958-9ab5-06fe3ff334b4.png",
-      "/lovable-uploads/abd70d81-3502-4bb0-b356-4f5ac235df84.png"
+    id: 'actions',
+    name: 'Actions',
+    icon: <Rocket className="h-6 w-6" />,
+    examples: [
+      {
+        name: "Tesla",
+        value: "780 €",
+        change: "+35 €",
+        changePercent: "+4.69%",
+        logo: "🚗"
+      },
+      {
+        name: "Apple",
+        value: "170 €",
+        change: "+8 €",
+        changePercent: "+4.94%",
+        logo: "🍎"
+      },
+      {
+        name: "Google",
+        value: "2 500 €",
+        change: "+120 €",
+        changePercent: "+5.04%",
+        logo: "🔎"
+      }
+    ]
+  },
+  {
+    id: 'business',
+    name: 'Business',
+    icon: <Handshake className="h-6 w-6" />,
+    examples: [
+      {
+        name: "CA Boutique",
+        value: "50 000 €",
+        change: "+2 500 €",
+        changePercent: "+5.26%",
+        logo: "🛍️"
+      },
+      {
+        name: "CA Restaurant",
+        value: "80 000 €",
+        change: "+4 000 €",
+        changePercent: "+5.26%",
+        logo: "🍽️"
+      },
+      {
+        name: "CA Agence",
+        value: "120 000 €",
+        change: "+6 000 €",
+        changePercent: "+5.26%",
+        logo: "🏢"
+      }
+    ]
+  },
+  {
+    id: 'luxe',
+    name: 'Luxe',
+    icon: <Diamond className="h-6 w-6" />,
+    examples: [
+      {
+        name: "Rolex",
+        value: "15 000 €",
+        change: "+750 €",
+        changePercent: "+5.26%",
+        logo: "⌚"
+      },
+      {
+        name: "Yacht",
+        value: "2 500 000 €",
+        change: "+125 000 €",
+        changePercent: "+5.26%",
+        logo: "🛥️"
+      },
+      {
+        name: "Ferrari",
+        value: "300 000 €",
+        change: "+15 000 €",
+        changePercent: "+5.26%",
+        logo: "🏎️"
+      }
     ]
   }
 ];
 
-const Features = () => {
-  const [activeFeature, setActiveFeature] = React.useState(features[0]);
+export default function Features() {
+  const [selectedProduct, setSelectedProduct] = useState(products[0]);
 
   return (
-    <section className="features-new bg-[#F6F6F7] py-24">
+    <section className="py-24 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-[#1A1F2C] mb-4">
-            Tous vos produits financiers en un seul endroit
-          </h2>
-          <p className="text-[#8E9196] text-lg max-w-2xl mx-auto">
-            Connectez et suivez facilement tous vos produits financiers pour une gestion optimale de votre patrimoine
-          </p>
-        </div>
+        <h2 className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          Types de produits suivis
+        </h2>
+        <p className="text-xl text-center text-gray-600 mb-12">
+          Connectez et suivez tous vos investissements en un seul endroit
+        </p>
 
-        <div className="grid md:grid-cols-12 gap-8 items-center">
-          <div className="md:col-span-4">
-            <div className="space-y-4">
-              {features.map((feature) => (
-                <Button
-                  key={feature.id}
-                  variant={activeFeature.id === feature.id ? "default" : "outline"}
-                  className={`w-full justify-start text-left p-6 h-auto ${
-                    activeFeature.id === feature.id 
-                      ? "bg-[#9b87f5] text-white" 
-                      : "hover:bg-[#F1F0FB] text-[#8E9196]"
-                  }`}
-                  onClick={() => setActiveFeature(feature)}
-                >
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-                    <p className={`text-sm ${
-                      activeFeature.id === feature.id 
-                        ? "text-white/90" 
-                        : "text-[#8E9196]"
-                    }`}>
-                      {feature.description}
-                    </p>
-                  </div>
-                </Button>
-              ))}
-            </div>
+        <div className="grid lg:grid-cols-[300px,1fr] gap-8 items-start">
+          <div className="flex flex-col gap-2">
+            {products.map((product) => (
+              <button
+                key={product.id}
+                onClick={() => setSelectedProduct(product)}
+                className={`p-4 text-left rounded-lg transition-all duration-200 ${
+                  selectedProduct.id === product.id
+                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'
+                    : 'hover:bg-gray-100'
+                }`}
+              >
+                <div className="flex items-center gap-3">
+                  {product.icon}
+                  <span className="text-xl font-medium">{product.name}</span>
+                </div>
+              </button>
+            ))}
           </div>
 
-          <div className="md:col-span-8">
-            <Carousel className="w-full">
+          <div className="bg-gray-50 rounded-2xl p-6">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
               <CarouselContent>
-                {activeFeature.images.map((image, index) => (
-                  <CarouselItem key={index}>
-                    <div className="bg-white p-1 rounded-xl shadow-lg">
-                      <img
-                        src={image}
-                        alt={`${activeFeature.title} exemple ${index + 1}`}
-                        className="w-full h-auto rounded-lg"
-                      />
-                    </div>
+                {selectedProduct.examples.map((example, index) => (
+                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                    <Card className="p-4 bg-black text-white rounded-xl">
+                      <div className="flex items-center gap-3 mb-3">
+                        <span className="text-2xl">{example.logo}</span>
+                        <div>
+                          <p className="font-medium">{example.name}</p>
+                        </div>
+                      </div>
+                      <p className="text-2xl font-bold mb-2">{example.value}</p>
+                      <p className="text-green-400">
+                        {example.change} ({example.changePercent})
+                      </p>
+                    </Card>
                   </CarouselItem>
                 ))}
               </CarouselContent>
@@ -115,6 +260,4 @@ const Features = () => {
       </div>
     </section>
   );
-};
-
-export default Features;
+}
