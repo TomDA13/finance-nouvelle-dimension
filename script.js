@@ -1,256 +1,308 @@
-
 document.addEventListener('DOMContentLoaded', function() {
-  // Sélectionner les éléments
-  const loginBtn = document.getElementById('loginBtn');
-  const signupBtn = document.getElementById('signupBtn');
-  const loginFormPopup = document.getElementById('loginFormPopup');
-  const signupFormPopup = document.getElementById('signupFormPopup');
-  const closeButtons = document.querySelectorAll('.close-button');
-  const switchToSignup = document.getElementById('switchToSignup');
-  const switchToLogin = document.getElementById('switchToLogin');
-  const ctaSignupButton = document.getElementById('cta-signup-button');
-  const heroSignupButton = document.querySelector('.hero-cta .btn-primary');
-  const startFreeButton = document.querySelector('.hero-cta a.btn-primary');
+    // Menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
 
-  // Fonction pour ouvrir le formulaire de connexion
-  function openLoginForm(e) {
-    if (e) e.preventDefault();
-    loginFormPopup.classList.add('active');
-    signupFormPopup.classList.remove('active');
-  }
-
-  // Fonction pour ouvrir le formulaire d'inscription
-  function openSignupForm(e) {
-    if (e) e.preventDefault();
-    signupFormPopup.classList.add('active');
-    loginFormPopup.classList.remove('active');
-  }
-
-  // Fonction pour fermer tous les formulaires
-  function closeAllForms() {
-    loginFormPopup.classList.remove('active');
-    signupFormPopup.classList.remove('active');
-  }
-
-  // Gestion des clics
-  if (loginBtn) {
-    loginBtn.addEventListener('click', openLoginForm);
-  }
-  
-  if (signupBtn) {
-    signupBtn.addEventListener('click', openSignupForm);
-  }
-  
-  // Fermer les formulaires quand on clique sur le bouton de fermeture
-  closeButtons.forEach(button => {
-    button.addEventListener('click', closeAllForms);
-  });
-
-  // Basculer entre les formulaires
-  if (switchToSignup) {
-    switchToSignup.addEventListener('click', function(e) {
-      e.preventDefault();
-      openSignupForm();
-    });
-  }
-
-  if (switchToLogin) {
-    switchToLogin.addEventListener('click', function(e) {
-      e.preventDefault();
-      openLoginForm();
-    });
-  }
-
-  // Fermer les formulaires quand on clique en dehors
-  window.addEventListener('click', function(e) {
-    if (loginFormPopup && e.target === loginFormPopup) {
-      closeAllForms();
-    }
-    if (signupFormPopup && e.target === signupFormPopup) {
-      closeAllForms();
-    }
-  });
-
-  // Gestion des soumissions de formulaires (pour éviter le rechargement de la page)
-  const authForms = document.querySelectorAll('.auth-form');
-  authForms.forEach(form => {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      // Ici vous pourriez ajouter la logique de validation ou d'envoi des données
-      alert('Formulaire soumis avec succès!');
-      closeAllForms();
-    });
-  });
-
-  // Add event listeners for the new CTA and hero buttons to open signup form
-  if (ctaSignupButton) {
-    ctaSignupButton.addEventListener('click', function(e) {
-      e.preventDefault();
-      openSignupForm();
-    });
-  }
-
-  if (heroSignupButton) {
-    heroSignupButton.addEventListener('click', function(e) {
-      e.preventDefault();
-      openSignupForm();
-    });
-  }
-
-  // Ajouter un écouteur d'événement pour le bouton "Commencer gratuitement"
-  if (startFreeButton) {
-    startFreeButton.addEventListener('click', function(e) {
-      e.preventDefault();
-      openSignupForm();
-    });
-  }
-
-  // Initialisation du menu mobile et autres fonctionnalités
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navMenu = document.querySelector('.nav-menu');
-
-  if (menuToggle) {
-    menuToggle.addEventListener('click', function() {
-      navMenu.classList.toggle('active');
-    });
-  }
-
-  // Gestion des onglets du dashboard
-  const tabButtons = document.querySelectorAll('.tab-button');
-  
-  if (tabButtons.length > 0) {
-    tabButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        // Enlever la classe active de tous les boutons
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-        this.classList.add('active');
-        
-        // Afficher le contenu de l'onglet correspondant
-        const tabId = this.getAttribute('data-tab');
-        document.querySelectorAll('.tab-pane').forEach(tab => {
-          tab.classList.remove('active');
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('open');
         });
-        document.getElementById(tabId).classList.add('active');
-      });
-    });
-  }
+    }
 
-  // Gestion des dots pour les témoignages
-  const dots = document.querySelectorAll('.dot');
-  const testimonialCards = document.querySelectorAll('.testimonial-card');
-  
-  if (dots.length > 0) {
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', function() {
-        // Enlever la classe active de tous les dots et témoignages
-        dots.forEach(d => d.classList.remove('active'));
-        testimonialCards.forEach(card => card.classList.remove('active'));
-        
-        // Ajouter la classe active au dot et au témoignage correspondant
-        this.classList.add('active');
-        testimonialCards[index].classList.add('active');
-      });
+    // Close menu when a link is clicked (optional, for single-page navigation)
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+            menuToggle.classList.remove('open');
+        });
     });
-  }
 
-  // Gestion du toggle de tarification
-  const pricingToggle = document.getElementById('pricingToggle');
-  const monthlyPrices = document.querySelectorAll('.price.monthly');
-  const annualPrices = document.querySelectorAll('.price.annual');
-  
-  if (pricingToggle) {
-    pricingToggle.addEventListener('change', function() {
-      if (this.checked) {
-        // Afficher les prix annuels
-        monthlyPrices.forEach(price => price.style.display = 'none');
-        annualPrices.forEach(price => price.style.display = 'inline');
-      } else {
-        // Afficher les prix mensuels
-        annualPrices.forEach(price => price.style.display = 'none');
-        monthlyPrices.forEach(price => price.style.display = 'inline');
-      }
+    // Form popup functionality
+    const loginBtn = document.getElementById('loginBtn');
+    const signupBtn = document.getElementById('signupBtn');
+    const loginFormPopup = document.getElementById('loginFormPopup');
+    const signupFormPopup = document.getElementById('signupFormPopup');
+    const switchToSignup = document.getElementById('switchToSignup');
+    const switchToLogin = document.getElementById('switchToLogin');
+    const closeButtons = document.querySelectorAll('.close-button');
+    const heroSignupButton = document.getElementById('hero-signup-button');
+    const ctaSignupButton = document.getElementById('cta-signup-button');
+
+    // Function to open a form popup
+    function openFormPopup(formPopup) {
+        formPopup.style.display = 'flex';
+        document.body.classList.add('popup-active'); // Prevent scrolling
+    }
+
+    // Function to close a form popup
+    function closeFormPopup(formPopup) {
+        formPopup.style.display = 'none';
+        document.body.classList.remove('popup-active'); // Allow scrolling
+    }
+
+    // Event listeners for opening the form popups
+    if (loginBtn) {
+        loginBtn.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default anchor behavior
+            openFormPopup(loginFormPopup);
+        });
+    }
+
+    if (signupBtn || heroSignupButton || ctaSignupButton) {
+        const signupButtons = [signupBtn, heroSignupButton, ctaSignupButton].filter(button => button !== null);
+        signupButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent default anchor behavior
+                openFormPopup(signupFormPopup);
+            });
+        });
+    }
+
+    // Event listeners for switching between forms
+    if (switchToSignup) {
+        switchToSignup.addEventListener('click', function(event) {
+            event.preventDefault();
+            closeFormPopup(loginFormPopup);
+            openFormPopup(signupFormPopup);
+        });
+    }
+
+    if (switchToLogin) {
+        switchToLogin.addEventListener('click', function(event) {
+            event.preventDefault();
+            closeFormPopup(signupFormPopup);
+            openFormPopup(loginFormPopup);
+        });
+    }
+
+    // Event listeners for closing the form popups
+    closeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const formPopup = button.closest('.form-popup-overlay');
+            closeFormPopup(formPopup);
+        });
     });
-  }
 
-  // Gestion des FAQ accordéons
-  const faqQuestions = document.querySelectorAll('.faq-question');
-  
-  if (faqQuestions.length > 0) {
-    faqQuestions.forEach(question => {
-      question.addEventListener('click', function() {
-        const faqItem = this.parentNode;
-        faqItem.classList.toggle('active');
-      });
-    });
-  }
-
-  // Gestion du formulaire de contact
-  const contactForm = document.getElementById('contactForm');
-  
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Votre message a été envoyé avec succès !');
-      contactForm.reset();
-    });
-  }
-
-  // Ajouter un texte de secours "Finsya" aux logos manquants
-  const logoImages = document.querySelectorAll('.logo-img');
-  logoImages.forEach(img => {
-    // Fonction pour remplacer l'image par le texte
-    function replaceWithTextLogo() {
-      const logoContainer = img.parentNode;
-      if (logoContainer) {
-        img.style.display = 'none';
-        if (!logoContainer.querySelector('.logo-text')) {
-          const logoText = document.createElement('div');
-          logoText.className = 'logo-text';
-          logoText.textContent = 'Finsya';
-          logoContainer.appendChild(logoText);
+    // Close popup if clicked outside the form
+    window.addEventListener('click', function(event) {
+        if (event.target === loginFormPopup) {
+            closeFormPopup(loginFormPopup);
         }
-      }
-    }
-    
-    // Vérifier si l'image existe déjà et est chargée
-    if (img.complete) {
-      if (img.naturalWidth === 0 || img.naturalHeight === 0) {
-        replaceWithTextLogo();
-      }
-    } else {
-      // Sinon attacher un gestionnaire d'événement pour l'erreur de chargement
-      img.onerror = replaceWithTextLogo;
-    }
-  });
+        if (event.target === signupFormPopup) {
+            closeFormPopup(signupFormPopup);
+        }
+    });
 
-  // Marquage du lien actif dans la navigation
-  const currentPage = window.location.pathname.split('/').pop();
-  
-  document.querySelectorAll('.nav-menu a, .dropdown-menu a, .footer-links a').forEach(link => {
-    const linkHref = link.getAttribute('href');
-    
-    // Si nous sommes sur la page d'accueil
-    if ((currentPage === '' || currentPage === 'index.html' || currentPage === '/') && 
-        (linkHref === 'index.html' || linkHref === './index.html' || linkHref === '/' || linkHref === './')) {
-      link.classList.add('active');
+    // Prevent scrolling when popup is open
+    document.addEventListener('DOMContentLoaded', function() {
+        const pricingToggle = document.getElementById('pricingToggle');
+        const monthlyPrices = document.querySelectorAll('.price.monthly');
+        const annualPrices = document.querySelectorAll('.price.annual');
+
+        if (pricingToggle) {
+            pricingToggle.addEventListener('change', function() {
+                if (this.checked) {
+                    // Show annual prices, hide monthly prices
+                    monthlyPrices.forEach(price => price.style.display = 'none');
+                    annualPrices.forEach(price => price.style.display = 'inline');
+                } else {
+                    // Show monthly prices, hide annual prices
+                    monthlyPrices.forEach(price => price.style.display = 'inline');
+                    annualPrices.forEach(price => price.style.display = 'none');
+                }
+            });
+        }
+    });
+
+    // FAQ items functionality
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        const icon = item.querySelector('.faq-icon i');
+
+        question.addEventListener('click', () => {
+            // Close other open items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('open')) {
+                    otherItem.classList.remove('open');
+                    otherItem.querySelector('.faq-answer').style.display = 'none';
+                    otherItem.querySelector('.faq-icon i').classList.remove('fa-minus');
+                    otherItem.querySelector('.faq-icon i').classList.add('fa-plus');
+                }
+            });
+
+            item.classList.toggle('open');
+            if (item.classList.contains('open')) {
+                answer.style.display = 'block';
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-minus');
+            } else {
+                answer.style.display = 'none';
+                icon.classList.remove('fa-minus');
+                icon.classList.add('fa-plus');
+            }
+        });
+    });
+});
+
+// Testimonials slider functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.querySelector('.testimonials-slider');
+    const cards = document.querySelectorAll('.testimonial-card');
+    const dotsContainer = document.querySelector('.testimonial-dots');
+    let currentCard = 0;
+
+    // Create dots
+    cards.forEach((_, index) => {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        dot.addEventListener('click', () => goToCard(index));
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll('.dot');
+
+    function updateDots() {
+        dots.forEach((dot, index) => {
+            if (index === currentCard) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
     }
-    // Pour les autres pages
-    else if (linkHref && linkHref.includes(currentPage)) {
-      link.classList.add('active');
+
+    function showCard(index) {
+        cards.forEach(card => card.classList.remove('active'));
+        cards[index].classList.add('active');
     }
-    
-    // Vérifier si le lien est cassé et le corriger
-    if (linkHref && !linkHref.startsWith('http') && 
-        !linkHref.startsWith('#') && 
-        !linkHref.startsWith('javascript:') &&
-        !link.classList.contains('forgot-password') &&
-        link.id !== 'switchToSignup' &&
-        link.id !== 'switchToLogin') {
-      
-      // S'assurer que tous les liens internes fonctionnent correctement
-      if (!link._hasClickListener) {
-        link._hasClickListener = true;
-      }
+
+    function goToCard(index) {
+        currentCard = index;
+        showCard(currentCard);
+        updateDots();
     }
-  });
+
+    function nextCard() {
+        currentCard = (currentCard + 1) % cards.length;
+        goToCard(currentCard);
+    }
+
+    // Initialize
+    showCard(currentCard);
+    updateDots();
+
+    // Set interval for auto sliding
+    setInterval(nextCard, 5000);
+});
+
+// Pricing toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const pricingToggle = document.getElementById('pricingToggle');
+    const monthlyPrices = document.querySelectorAll('.price.monthly');
+    const annualPrices = document.querySelectorAll('.price.annual');
+
+    if (pricingToggle) {
+        pricingToggle.addEventListener('change', function() {
+            if (this.checked) {
+                // Show annual prices, hide monthly prices
+                monthlyPrices.forEach(price => price.style.display = 'none');
+                annualPrices.forEach(price => price.style.display = 'inline');
+            } else {
+                // Show monthly prices, hide annual prices
+                monthlyPrices.forEach(price => price.style.display = 'inline');
+                annualPrices.forEach(price => price.style.display = 'none');
+            }
+        });
+    }
+});
+
+// Données des produits pour le carrousel
+const productData = {
+    actions: [
+        { name: "Apple", symbol: "AAPL", value: "62 230 €", change: "+7 815 €", percent: "+14,36%", logo: "🍎" },
+        { name: "Tesla", symbol: "TSLA", value: "18 230 €", change: "+3 686 €", percent: "+25,34%", logo: "🚗" },
+        { name: "Microsoft", symbol: "MSFT", value: "8 750 €", change: "+1 340 €", percent: "+18,08%", logo: "💻" }
+    ],
+    immobilier: [
+        { name: "Studio Paris", value: "280 000 €", change: "+15 000 €", percent: "+5,66%", logo: "🏠" },
+        { name: "Appart Lyon", value: "320 000 €", change: "+18 000 €", percent: "+5,94%", logo: "🏢" }
+    ],
+    crypto: [
+        { name: "Bitcoin", symbol: "BTC", value: "42 230 €", change: "+3 815 €", percent: "+9,93%", logo: "₿" },
+        { name: "Ethereum", symbol: "ETH", value: "2 950 €", change: "+210 €", percent: "+7,66%", logo: "Ξ" }
+    ],
+    epargne: [
+        { name: "Livret A", value: "12 500 €", change: "+250 €", percent: "+2,04%", logo: "🏦" },
+        { name: "PEL", value: "45 000 €", change: "+900 €", percent: "+2,04%", logo: "💰" }
+    ],
+    startup: [
+        { name: "StartupA", value: "50 000 €", change: "+5 000 €", percent: "+11,11%", logo: "🚀" },
+        { name: "StartupB", value: "75 000 €", change: "+8 000 €", percent: "+11,94%", logo: "💡" }
+    ],
+    exotique: [
+        { name: "Vin", value: "15 000 €", change: "+1 500 €", percent: "+11,11%", logo: "🍷" },
+        { name: "Art", value: "25 000 €", change: "+2 000 €", percent: "+8,70%", logo: "🎨" }
+    ]
+};
+
+// Initialisation du carrousel de produits
+function initProductCarousel() {
+    const productButtons = document.querySelectorAll('.product-button');
+    const cardContainer = document.getElementById('product-cards');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+
+    function updateCards(productType) {
+        const products = productData[productType];
+        cardContainer.innerHTML = products.map(product => `
+            <div class="product-card">
+                <div class="product-card-header">
+                    <div class="product-logo">${product.logo}</div>
+                    <div>
+                        <h3>${product.name}</h3>
+                        ${product.symbol ? `<span class="product-symbol">${product.symbol}</span>` : ''}
+                    </div>
+                </div>
+                <div class="product-value">${product.value}</div>
+                <div class="product-change">
+                    ${product.change} (${product.percent})
+                </div>
+            </div>
+        `).join('');
+    }
+
+    productButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            productButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            const productType = button.getAttribute('data-product');
+            updateCards(productType);
+        });
+    });
+
+    // Initialiser avec le premier type de produit
+    updateCards('actions');
+
+    let scrollAmount = 0;
+    const scrollStep = 300;
+
+    prevBtn.addEventListener('click', () => {
+        scrollAmount = Math.max(scrollAmount - scrollStep, 0);
+        cardContainer.scroll({ left: scrollAmount, behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', () => {
+        scrollAmount = Math.min(scrollAmount + scrollStep, cardContainer.scrollWidth - cardContainer.clientWidth);
+        cardContainer.scroll({ left: scrollAmount, behavior: 'smooth' });
+    });
+}
+
+// Appeler l'initialisation une fois le DOM chargé
+document.addEventListener('DOMContentLoaded', () => {
+    initProductCarousel();
 });
