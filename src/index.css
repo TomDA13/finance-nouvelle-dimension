@@ -1,4 +1,3 @@
-
 .nav-auth-buttons {
   display: flex;
   align-items: center;
@@ -9,24 +8,7 @@
   text-decoration: none;
 }
 
-/* Navbar dropdown fix */
-.dropdown {
-  position: relative;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: white;
-  border-radius: 4px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 10;
-  min-width: 200px;
-}
-
-.dropdown.active .dropdown-menu,
-.dropdown:hover .dropdown-menu {
-  display: block;
+/* Ajout d'une règle spécifique pour la marge des boutons */
+.nav-auth-buttons .btn-outline {
+  margin-right: 0;
 }
