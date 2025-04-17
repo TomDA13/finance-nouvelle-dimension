@@ -186,30 +186,56 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Gérer le logo manquant en ajoutant un texte de remplacement
-  const logoContainer = document.querySelector('.logo-container');
-  if (logoContainer) {
-    const logoImg = logoContainer.querySelector('.logo-img');
-    if (logoImg && (!logoImg.complete || logoImg.naturalWidth === 0)) {
-      // Si l'image du logo ne se charge pas, afficher un texte de remplacement
-      if (!logoContainer.querySelector('.logo-text-fallback')) {
-        const logoText = document.createElement('div');
-        logoText.className = 'logo-text-fallback';
-        logoText.textContent = 'Finsya';
-        logoContainer.appendChild(logoText);
+  // Ajouter un texte de secours aux logos manquants
+  const logoImages = document.querySelectorAll('.logo-img');
+  logoImages.forEach(img => {
+    img.onerror = function() {
+      // Si l'image ne se charge pas, afficher un texte
+      const logoContainer = this.parentNode;
+      if (logoContainer) {
+        this.style.display = 'none';
+        if (!logoContainer.querySelector('.logo-text')) {
+          const logoText = document.createElement('div');
+          logoText.className = 'logo-text';
+          logoText.textContent = 'Finsya';
+          logoText.style.fontSize = '24px';
+          logoText.style.fontWeight = 'bold';
+          logoText.style.color = '#4a6cf7';
+          logoContainer.appendChild(logoText);
+        }
       }
+    };
+    // Déclencher immédiatement la vérification pour les images déjà chargées
+    if (img.complete && (img.naturalWidth === 0 || img.naturalHeight === 0)) {
+      img.onerror();
+    }
+  });
+
+  // Corriger les liens entre les pages
+  document.querySelectorAll('a[href]').forEach(link => {
+    // Ignorer les liens externes, les liens avec # et les liens de formulaire
+    if (link.getAttribute('href').startsWith('http') || 
+        link.getAttribute('href').startsWith('#') || 
+        link.getAttribute('href').startsWith('javascript:') ||
+        link.classList.contains('forgot-password') ||
+        link.id === 'switchToSignup' ||
+        link.id === 'switchToLogin') {
+      return;
     }
     
-    // Vérifier l'état de l'image après chargement
-    if (logoImg) {
-      logoImg.addEventListener('error', function() {
-        if (!logoContainer.querySelector('.logo-text-fallback')) {
-          const logoText = document.createElement('div');
-          logoText.className = 'logo-text-fallback';
-          logoText.textContent = 'Finsya';
-          logoContainer.appendChild(logoText);
+    // Éviter que le lien ne soit réattribué plusieurs fois
+    if (!link._hasClickListener) {
+      link._hasClickListener = true;
+      
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        
+        // Si c'est un lien vers une autre page, vérifier si le fichier existe
+        if (href && !href.startsWith('#') && !href.includes('?')) {
+          // Permettre la navigation normale
+          return true;
         }
       });
     }
-  }
+  });
 });

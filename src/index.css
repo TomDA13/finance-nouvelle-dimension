@@ -32,27 +32,16 @@
   display: flex;
 }
 
-/* Style pour le texte de remplacement du logo */
-.logo-text-fallback {
+/* Style pour le texte du logo de secours */
+.logo-text {
   font-size: 24px;
-  font-weight: 700;
-  color: #3366FF;
-  font-family: 'Poppins', sans-serif;
-}
-
-/* Assurer que tous les liens de navigation fonctionnent */
-.navbar a, .footer a {
-  cursor: pointer;
+  font-weight: bold;
+  color: #4a6cf7;
   text-decoration: none;
-  color: inherit;
+  padding: 10px 0;
 }
 
-.navbar a:hover, .footer a:hover {
-  color: #3366FF;
-}
-
-/* Style pour les liens actifs */
-.nav-menu a.active {
-  color: #3366FF;
-  font-weight: 500;
+.logo-container {
+  display: flex;
+  align-items: center;
 }
