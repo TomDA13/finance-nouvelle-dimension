@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   gap: 15px;
+  margin-left: auto; /* This pushes the buttons to the right */
 }
 
 .nav-auth-buttons a {
