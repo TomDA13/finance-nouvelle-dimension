@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
   // Sélectionner les éléments
   const loginBtn = document.getElementById('loginBtn');
@@ -8,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const closeButtons = document.querySelectorAll('.close-button');
   const switchToSignup = document.getElementById('switchToSignup');
   const switchToLogin = document.getElementById('switchToLogin');
+  const ctaSignupButton = document.getElementById('cta-signup-button');
+  const heroSignupButton = document.querySelector('.hero-cta .btn-primary');
 
   // Fonction pour ouvrir le formulaire de connexion
   function openLoginForm(e) {
@@ -69,6 +70,21 @@ document.addEventListener('DOMContentLoaded', function() {
       closeAllForms();
     });
   });
+
+  // Add event listeners for the new CTA and hero buttons to open signup form
+  if (ctaSignupButton) {
+    ctaSignupButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      openSignupForm();
+    });
+  }
+
+  if (heroSignupButton) {
+    heroSignupButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      openSignupForm();
+    });
+  }
 
   // Initialisation du menu mobile et autres fonctionnalités
   const menuToggle = document.querySelector('.menu-toggle');
