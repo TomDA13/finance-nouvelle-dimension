@@ -214,21 +214,34 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Amélioration des liens entre les pages
-  document.querySelectorAll('a[href]').forEach(link => {
-    // Ne pas modifier les liens externes, les liens ancres, et les liens spéciaux
-    if (link.getAttribute('href').startsWith('http') || 
-        link.getAttribute('href').startsWith('#') || 
-        link.getAttribute('href').startsWith('javascript:') ||
-        link.classList.contains('forgot-password') ||
-        link.id === 'switchToSignup' ||
-        link.id === 'switchToLogin') {
-      return;
+  // Marquage du lien actif dans la navigation
+  const currentPage = window.location.pathname.split('/').pop();
+  
+  document.querySelectorAll('.nav-menu a, .dropdown-menu a, .footer-links a').forEach(link => {
+    const linkHref = link.getAttribute('href');
+    
+    // Si nous sommes sur la page d'accueil
+    if ((currentPage === '' || currentPage === 'index.html' || currentPage === '/') && 
+        (linkHref === 'index.html' || linkHref === './index.html' || linkHref === '/' || linkHref === './')) {
+      link.classList.add('active');
+    }
+    // Pour les autres pages
+    else if (linkHref && linkHref.includes(currentPage)) {
+      link.classList.add('active');
     }
     
-    // S'assurer que les liens internes fonctionnent correctement
-    if (!link._hasClickListener) {
-      link._hasClickListener = true;
+    // Vérifier si le lien est cassé et le corriger
+    if (linkHref && !linkHref.startsWith('http') && 
+        !linkHref.startsWith('#') && 
+        !linkHref.startsWith('javascript:') &&
+        !link.classList.contains('forgot-password') &&
+        link.id !== 'switchToSignup' &&
+        link.id !== 'switchToLogin') {
+      
+      // S'assurer que tous les liens internes fonctionnent correctement
+      if (!link._hasClickListener) {
+        link._hasClickListener = true;
+      }
     }
   });
 });

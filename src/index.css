@@ -48,7 +48,8 @@
 
 /* Assurer que les liens actifs sont visibles */
 .nav-menu li a.active,
-.dropdown-menu a.active {
+.dropdown-menu a.active,
+.footer-links a.active {
   color: #4a6cf7;
   font-weight: 600;
 }
@@ -59,3 +60,15 @@
   border-radius: 8px;
 }
 
+/* Styles pour les liens de navigation */
+.nav-menu a, 
+.dropdown-menu a, 
+.footer-links a {
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover, 
+.dropdown-menu a:hover, 
+.footer-links a:hover {
+  color: #4a6cf7;
+}
