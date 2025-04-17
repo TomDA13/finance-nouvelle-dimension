@@ -50,33 +50,21 @@ const Index = () => {
           <div className="logo-container">
             <img src="../assets/logo.svg" alt="Finsya Logo" className="logo-img" />
           </div>
-          
-          <ul className="nav-menu">
-            <li><a href="#">Fonctionnalités</a></li>
-            <li className="dropdown">
-              <a href="#" className="dropdown-toggle">Ressources <i className="fas fa-chevron-down"></i></a>
-              <div className="dropdown-menu">
-                <a href="https://www.finsya.com/guide">Guide gratuit</a>
-                <a href="https://www.finsya.com/blog">Blog</a>
-                <a href="https://discord.gg/d3Js2PhsT8">Communauté</a>
-              </div>
-            </li>
-            <li><a href="#tarifs">Tarifs</a></li>
-            <li className="dropdown">
-              <a href="#" className="dropdown-toggle">À propos <i className="fas fa-chevron-down"></i></a>
-              <div className="dropdown-menu">
-                <a href="#">Notre histoire</a>
-                <a href="#">Sécurité</a>
-                <a href="#">Roadmap</a>
-                <a href="#">Contact</a>
-              </div>
-            </li>
-          </ul>
-          
-          <div className="nav-auth-buttons">
-            <li><a href="#" onClick={openLoginForm}>Se connecter</a></li>
-            <li><a href="#" onClick={openSignupForm} className="btn-primary">S'inscrire</a></li>
+          <div className="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
+          <ul className="nav-menu">
+            <li><a href="#fonctionnalites">Fonctionnalités</a></li>
+            <li><a href="#pourquoi">Pourquoi Nous</a></li>
+            <li><a href="#temoignages">Témoignages</a></li>
+            <li><a href="#tarifs">Tarifs</a></li>
+            <div className="nav-auth-buttons">
+              <li><a href="#" onClick={openLoginForm}>Se connecter</a></li>
+              <li><a href="#" onClick={openSignupForm}>S'inscrire</a></li>
+            </div>
+          </ul>
         </div>
       </nav>
       

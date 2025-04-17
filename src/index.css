@@ -4,35 +4,3 @@
   justify-content: center;
   gap: 1rem;
 }
-
-/* Navigation menu layout adjustments */
-.navbar .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo-container {
-  flex: 1;
-}
-
-.nav-menu {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 3;
-}
-
-.nav-menu li:not(:nth-last-child(-n+2)) {
-  margin: 0;
-  flex: 1;
-  text-align: center;
-}
-
-.nav-auth-buttons {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  flex: 1;
-  justify-content: flex-end;
-}
