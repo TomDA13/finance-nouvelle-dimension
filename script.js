@@ -305,4 +305,25 @@ function initProductCarousel() {
 // Appeler l'initialisation une fois le DOM chargé
 document.addEventListener('DOMContentLoaded', () => {
     initProductCarousel();
+    // Tabs dashboard functionality
+const tabButtons = document.querySelectorAll('.tab-button');
+const tabPanes = document.querySelectorAll('.tab-pane');
+
+tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const targetTab = button.getAttribute('data-tab');
+
+        // Remove 'active' from all buttons
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+
+        // Remove 'active' from all tab panes
+        tabPanes.forEach(pane => pane.classList.remove('active'));
+
+        // Add 'active' to the clicked button
+        button.classList.add('active');
+
+        // Add 'active' to the corresponding tab pane
+        document.getElementById(targetTab).classList.add('active');
+    });
+});
 });
