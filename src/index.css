@@ -1,18 +1,5 @@
 
-.nav-auth-buttons {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.nav-auth-buttons a {
-  text-decoration: none;
-}
-
-/* Ajout d'une règle spécifique pour la marge des boutons */
-.nav-auth-buttons .btn-outline {
-  margin-right: 0;
-}
+/* ... keep existing code */
 
 /* Styles pour les popups d'authentification */
 .form-popup-overlay {
@@ -72,3 +59,11 @@
 .footer-links a:hover {
   color: #4a6cf7;
 }
+
+/* Centrer les cartes dans la section 'Solutions adaptées à vos besoins' */
+.use-cases-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
